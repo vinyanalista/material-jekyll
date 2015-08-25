@@ -1,0 +1,55 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    padding-top: 70px;
+}
+
+.footer {
+    background-color: #009688;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.footer, .footer a {
+	color: rgba(255, 255, 255, 0.84);
+}
+
+.footer > .container {
+    padding: 15px;
+}
+
+@media (max-width: 767px) {
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: 260px;
+    }
+
+    .footer {
+        /* Set the fixed height of the footer here */
+        height: 260px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        margin-bottom: 180px;
+    }
+
+    .footer {
+        height: 180px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        margin-bottom: 140px;
+    }
+
+    .footer {
+        height: 140px;
+    }
+}
