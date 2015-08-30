@@ -110,7 +110,7 @@ body {
 
 /* Home page */
 
-.page-heading {
+.page-heading, .post-header {
     margin-bottom: 30px;
 }
 
