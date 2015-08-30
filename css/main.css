@@ -67,6 +67,7 @@ body {
 
 #search-form {
     background: #009688;
+    box-shadow: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -98,4 +99,27 @@ body {
     -webkit-animation: none;
     animation: none;
     background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#d2d2d2, #d2d2d2);
+}
+
+/* Home page */
+
+.page-heading {
+    margin-bottom: 30px;
+}
+
+.post-link {
+    display: block;
+}
+
+.post-list {
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.post-list > li {
+    margin-bottom: 30px;
+}
+
+.post-title {
+    margin-top: 0px;
 }
