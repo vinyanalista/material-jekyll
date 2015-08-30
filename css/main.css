@@ -7,6 +7,8 @@ body {
     padding-top: 70px;
 }
 
+/* Footer */
+
 .footer {
     background-color: #009688;
     bottom: 0;
@@ -25,33 +27,38 @@ body {
 @media (max-width: 767px) {
     body {
         /* Margin bottom by footer height */
-        margin-bottom: 260px;
+        margin-bottom: 285px;
     }
 
     .footer {
         /* Set the fixed height of the footer here */
-        height: 260px;
+        height: 285px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     body {
-        margin-bottom: 180px;
+        margin-bottom: 170px;
     }
 
     .footer {
-        height: 180px;
+        height: 170px;
     }
 }
 
 @media (min-width: 992px) {
     body {
-        margin-bottom: 140px;
+        margin-bottom: 150px;
     }
 
     .footer {
-        height: 140px;
+        height: 150px;
     }
+}
+
+.contact-list, .social-media-list {
+    margin-left: 0px;
+    padding: 0px;
 }
 
 /* Search form */

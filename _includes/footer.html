@@ -1,31 +1,36 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <ul class="contact-list">
+            <div class="col-md-12">
+                <p class="lead">Your awesome title</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <ul class="contact-list list-unstyled">
                     <li>{{ site.title }}</li>
-                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    <li><a href="mailto:{{ site.email }}"><i class="fa fa-envelope"></i> {{ site.email }}</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <ul class="social-media-list">
+            <div class="col-sm-2">
+                <ul class="social-media-list list-unstyled">
                     {% if site.github_username %}
                         <li>
                             <a href="https://github.com/{{ site.github_username }}">
-                                {{ site.github_username }}
+                                <i class="fa fa-github"></i> {{ site.github_username }}
                             </a>
                         </li>
                     {% endif %}
                     {% if site.twitter_username %}
                         <li>
                             <a href="https://twitter.com/{{ site.twitter_username }}">
-                                {{ site.twitter_username }}
+                                <i class="fa fa-twitter"></i> {{ site.twitter_username }}
                             </a>
                         </li>
                     {% endif %}
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6">
                 <p class="text">{{ site.description }}</p>
             </div>
         </div>
