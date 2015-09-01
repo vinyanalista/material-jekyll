@@ -12,3 +12,18 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+##############
+# Pagination #
+##############
+
+# Specifies how many items should be displayed per page
+# Default: none (pagination disabled)
+# paginate: 5
+
+# You may also specify the destination of the pagination pages
+# Default: /page:num
+# paginate_path: "/blog/page:num/"
+
+# For more info on pagination, please refer to
+# http://jekyllrb.com/docs/pagination/

@@ -6,13 +6,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <ul class="contact-list list-unstyled">
                     <li>{{ site.title }}</li>
                     <li><a href="mailto:{{ site.email }}"><i class="fa fa-envelope"></i> {{ site.email }}</a></li>
                 </ul>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <ul class="social-media-list list-unstyled">
                     {% if site.github_username %}
                         <li>
@@ -28,6 +28,11 @@
                             </a>
                         </li>
                     {% endif %}
+                    <li>
+                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                            <i class="fa fa-rss-square"></i> subscribe via RSS
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-sm-6">

@@ -2,11 +2,17 @@
 layout: default
 ---
 
+{% if paginator %}
+{% assign post_list = paginator.posts %}
+{% else %}
+{% assign post_list = site.posts %}
+{% endif %}
+
 <div class="home">
     <h1 class="page-heading">Posts</h1>
 
     <ul class="post-list list-unstyled">
-        {% for post in site.posts %}
+        {% for post in post_list %}
             <li>
                 <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
                 <h2 class="post-title">
@@ -15,7 +21,66 @@ layout: default
             </li>
         {% endfor %}
     </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
+
+{% if paginator and paginator.total_pages > 1 %}
+<nav>
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous">
+            <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">
+                <span class="visible-xs-inline">&lt;&lt;</span>
+                <span class="hidden-xs">← Newer</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', ''  }}">
+                <span class="visible-xs-inline">&lt;</span>
+                <span class="hidden-xs">Next</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="disabled previous">
+            <span>
+                <span class="visible-xs-inline">&lt;&lt;</span>
+                <span class="hidden-xs">← Newer</span>
+            </span>
+        </li>
+        <li class="disabled">
+            <span>
+                <span class="visible-xs-inline">&lt;</span>
+                <span class="hidden-xs">Next</span>
+            </span>
+        </li>
+        {% endif %}
+        
+        {% if paginator.next_page %}
+        <li>
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                <span class="visible-xs-inline">&gt;</span>
+                <span class="hidden-xs">Previous</span>
+            </a>
+        </li>
+        <li class="next">
+            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}">
+                <span class="visible-xs-inline">&gt;&gt;</span>
+                <span class="hidden-xs">Older →</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="disabled">
+            <span>
+                <span class="visible-xs-inline">&gt;</span>
+                <span class="hidden-xs">Previous</span>
+            </span>
+        </li>
+        <li class="disabled next">
+            <span>
+                <span class="visible-xs-inline">&gt;&gt;</span>
+                <span class="hidden-xs">Older →</span>
+            </span>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
