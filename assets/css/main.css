@@ -27,32 +27,32 @@ body {
 @media (max-width: 767px) {
     body {
         /* Margin bottom by footer height */
-        margin-bottom: 285px;
+        margin-bottom: 300px;
     }
 
     .footer {
         /* Set the fixed height of the footer here */
-        height: 285px;
+        height: 300px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    body {
+        margin-bottom: 200px;
+    }
+
+    .footer {
+        height: 200px;
+    }
+}
+
+@media (min-width: 992px) {
     body {
         margin-bottom: 170px;
     }
 
     .footer {
         height: 170px;
-    }
-}
-
-@media (min-width: 992px) {
-    body {
-        margin-bottom: 150px;
-    }
-
-    .footer {
-        height: 150px;
     }
 }
 
