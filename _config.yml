@@ -1,15 +1,3 @@
-# Site settings
-title: Your awesome title
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: jekyllrb
-github_username:  jekyll
-
-# Build settings
-markdown: kramdown
-
 ###############
 # Author info #
 ###############
@@ -22,6 +10,28 @@ author:
     # Site's author email
     # Default: not set (author email is not displayed)
     email: your-email@yourdomain.com
+
+############
+# Building #
+############
+
+# Excerpt separator
+# Completely disable excerpts by setting your excerpt_separator to ""
+# Default: "\n\n"
+# excerpt_separator: "\n\n"
+
+# For more info on post excerpts, please refer to
+# http://jekyllrb.com/docs/posts/#post-excerpts
+
+# Markdown renderer
+# Sets the Markdown renderer to be used by Jekyll (kramdown, redcarpet or your
+# own)
+# Default: kramdown
+# markdown: kramdown
+
+# For more info on how to use and configure Markdown renderers, as well as how
+# to create custom renderers, please refer to
+# http://jekyllrb.com/docs/configuration/#markdown-options
 
 ##############
 # Pagination #
@@ -58,3 +68,30 @@ author:
 
 # For more info on the serve command options, please refer to
 # http://jekyllrb.com/docs/configuration/
+
+#################
+# Site settings #
+#################
+
+# Site title
+title: Your awesome title
+
+# Site description
+description: > # this means to ignore newlines until the text ends
+    Write an awesome description for your new site here. You can edit this
+    line in _config.yml. It will appear in your document head meta (for
+    Google search results) and in your feed.xml site description.
+
+###################
+# Social networks #
+###################
+
+# GitHub username
+# Example: jekyll, if your GitHub URL is https://github.com/jekyll
+# Default: not set (GitHub URL is not displayed)
+github_username:  jekyll
+
+# Twitter username
+# Example: jekyllrb, if your Twitter URL is https://twitter.com/jekyllrb
+# Default: not set (Twitter URL is not displayed)
+twitter_username: jekyllrb
