@@ -33,7 +33,13 @@ markdown: kramdown
 # Site URL
 # The base protocol and hostname for the website
 # Default: not set (this variable is only necessary for external systems)
-# url: "http://yourdomain.com"
+# url: "https://yourdomain.com"
+
+# Enforce the use of HTTPS on production domain
+# The hostname (does not include protocol, just the domain) for which the use of
+# HTTPS should be enforced
+# Default: not set (the use of HTTPS is never enforced)
+# enforce_https: "yourdomain.com"
 
 ###########
 # Serving #
