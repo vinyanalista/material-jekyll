@@ -26,61 +26,26 @@ layout: default
 {% if paginator and paginator.total_pages > 1 %}
 <nav>
     <ul class="pager">
-        {% if paginator.previous_page %}
-        <li class="previous">
-            <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">
-                <span class="visible-xs-inline">&lt;&lt;</span>
-                <span class="hidden-xs">← Newer</span>
+        <li class="{% if paginator.previous_page %}previous{% else %}disabled previous{% endif %}">
+            <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Newer">
+                &laquo;<span class="hidden-xs"> Newer</span>
             </a>
         </li>
-        <li>
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', ''  }}">
-                <span class="visible-xs-inline">&lt;</span>
-                <span class="hidden-xs">Next</span>
+        <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}>
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" aria-label="Next">
+                &lsaquo;<span class="hidden-xs"> Next</span>
             </a>
         </li>
-        {% else %}
-        <li class="disabled previous">
-            <span>
-                <span class="visible-xs-inline">&lt;&lt;</span>
-                <span class="hidden-xs">← Newer</span>
-            </span>
-        </li>
-        <li class="disabled">
-            <span>
-                <span class="visible-xs-inline">&lt;</span>
-                <span class="hidden-xs">Next</span>
-            </span>
-        </li>
-        {% endif %}
-        
-        {% if paginator.next_page %}
-        <li>
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-                <span class="visible-xs-inline">&gt;</span>
-                <span class="hidden-xs">Previous</span>
+        <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}>
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
+                <span class="hidden-xs">Previous </span>&rsaquo;
             </a>
         </li>
-        <li class="next">
-            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}">
-                <span class="visible-xs-inline">&gt;&gt;</span>
-                <span class="hidden-xs">Older →</span>
+        <li class="{% if paginator.next_page %}next{% else %}disabled next{% endif %}">
+            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}" aria-label="Older">
+                <span class="hidden-xs">Older </span>&raquo;
             </a>
         </li>
-        {% else %}
-        <li class="disabled">
-            <span>
-                <span class="visible-xs-inline">&gt;</span>
-                <span class="hidden-xs">Previous</span>
-            </span>
-        </li>
-        <li class="disabled next">
-            <span>
-                <span class="visible-xs-inline">&gt;&gt;</span>
-                <span class="hidden-xs">Older →</span>
-            </span>
-        </li>
-        {% endif %}
     </ul>
 </nav>
 {% endif %}
