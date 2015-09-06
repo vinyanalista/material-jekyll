@@ -1,15 +1,19 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <p class="lead">Your awesome title</p>
+            <div class="col-sm-12">
+                <p class="lead">{{ site.title }}</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <ul class="contact-list list-unstyled">
-                    <li>{{ site.title }}</li>
-                    <li><a href="mailto:{{ site.email }}"><i class="fa fa-envelope"></i> {{ site.email }}</a></li>
+                    {% if site.author.name %}
+                        <li>{{ site.author.name }}</li>
+                    {% endif %}
+                    {% if site.author.email %}
+                        <li><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="col-sm-3">
@@ -35,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-5">
                 <p class="text">{{ site.description }}</p>
             </div>
         </div>
