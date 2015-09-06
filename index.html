@@ -3,9 +3,9 @@ layout: default
 ---
 
 {% if paginator %}
-{% assign post_list = paginator.posts %}
+    {% assign post_list = paginator.posts %}
 {% else %}
-{% assign post_list = site.posts %}
+    {% assign post_list = site.posts %}
 {% endif %}
 
 <div class="home">

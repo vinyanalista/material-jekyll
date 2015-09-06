@@ -5,8 +5,6 @@ description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -18,12 +16,33 @@ markdown: kramdown
 ##############
 
 # Specifies how many items should be displayed per page
-# Default: none (pagination disabled)
-# paginate: 5
+# Default: not set (pagination disabled)
+# paginate: 10
 
 # You may also specify the destination of the pagination pages
-# Default: /page:num
-# paginate_path: "/blog/page:num/"
+# Default: /page:num (for example, /page2, /page3, etc)
+# paginate_path: "/blog/page/:num/"
 
 # For more info on pagination, please refer to
 # http://jekyllrb.com/docs/pagination/
+
+##############
+# Publishing #
+##############
+
+# Site URL
+# The base protocol and hostname for the website
+# Default: not set (this variable is only necessary for external systems)
+# url: "http://yourdomain.com"
+
+###########
+# Serving #
+###########
+
+# Base URL
+# Serve the website from the given base URL (does not include hostname)
+# Default: "" (website is at the root of the domain)
+# baseurl: ""
+
+# For more info on the serve command options, please refer to
+# http://jekyllrb.com/docs/configuration/
