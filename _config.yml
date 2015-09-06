@@ -18,7 +18,7 @@ author:
 # Excerpt separator
 # Completely disable excerpts by setting your excerpt_separator to ""
 # Default: "\n\n"
-# excerpt_separator: "\n\n"
+excerpt_separator: <!--more-->
 
 # For more info on post excerpts, please refer to
 # http://jekyllrb.com/docs/posts/#post-excerpts
