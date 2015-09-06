@@ -4,7 +4,22 @@ html {
 }
 
 body {
+    background-color: #E5E5E5;
     padding-top: 70px;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-top: 0;
+}
+
+.panel-default > .panel-heading {
+    color: #212121;
+    background-color: #F5F5F5;
 }
 
 /* Footer */
@@ -108,25 +123,14 @@ body {
     background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#d2d2d2, #d2d2d2);
 }
 
-/* Home page */
+/* Blog posts */
 
-.page-heading, .post-header {
-    margin-bottom: 30px;
+.blog-post-link,
+.blog-post-link:focus,
+.blog-post-link:hover {
+    color: #444;
 }
 
-.post-link {
-    display: block;
-}
-
-.post-list {
-    margin-left: 0px;
-    padding: 0px;
-}
-
-.post-list > li {
-    margin-bottom: 30px;
-}
-
-.post-title {
-    margin-top: 0px;
+.blog-post-meta {
+    color: #999;
 }

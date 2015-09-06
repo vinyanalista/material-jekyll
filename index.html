@@ -7,21 +7,29 @@ layout: default
 {% else %}
     {% assign post_list = site.posts %}
 {% endif %}
-
-<div class="home">
-    <h1 class="page-heading">Posts</h1>
-
-    <ul class="post-list list-unstyled">
-        {% for post in post_list %}
-            <li>
-                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-                <h2 class="post-title">
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
+    
+{% for post in post_list %}
+<div class="col-xs-12">
+    <div class="blog-post panel panel-default">
+        <div class="panel-heading">
+            <h2 class="blog-post-title">
+                <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+            <p class="blog-post-meta">
+                {{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}
+            </p>
+        </div><!-- .panel-heading -->
+        <div class="blog-post-content panel-body">
+            <p>{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
+            <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                Read more &rsaquo;
+            </a>
+        </div><!-- .blog-post-content -->
+    </div><!-- .blog-post -->
+</div><!-- .col-xs-12 -->
+{% endfor %}
 
 {% if paginator and paginator.total_pages > 1 %}
 <nav>

@@ -2,13 +2,18 @@
 layout: default
 ---
 
-<div class="post">
+<div class="col-xs-12">
+    <div class="blog-post panel panel-default">
+        <header class="panel-heading">
+            <h1 class="blog-post-title">
+                <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}">
+                    {{ page.title }}
+                </a>
+            </h1>
+        </header>
 
-    <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-    </header>
-
-    <article class="post-content">
-        {{ content }}
-    </article>
-</div>
+        <article class="blog-post-content panel-body">
+            {{ content }}
+        </article>
+    </div><!-- .blog-post -->
+</div><!-- .col-xs-12 -->
