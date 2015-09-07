@@ -45,6 +45,22 @@ excerpt_separator: <!--more-->
 # to create custom renderers, please refer to
 # http://jekyllrb.com/docs/configuration/#markdown-options
 
+######################
+# Google integration #
+######################
+
+google:
+    # Google Analytics Property ID
+    # Allows tracking site pageviews and other events using Google Analytics.
+    # Default: not set (Google Analytics is not used to track site pageviews)
+    # analytics_property_id: UA-12345678-9
+
+    # If you do not know your Property ID, take a look at
+    # https://support.google.com/analytics/answer/1032385
+
+    # For more info on Google Analytic, please refer to
+    # https://support.google.com/analytics/
+
 ##############
 # Pagination #
 ##############
