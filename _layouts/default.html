@@ -6,7 +6,7 @@
 
 {% include head.html %}
 
-<body>
+<body itemscope itemtype="http://schema.org/{% if page.is_post %}{{ "BlogPosting" }}{% else %}{{ "WebPage" }}{% endif %}">
 
     {% include header.html %}
 

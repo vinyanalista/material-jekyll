@@ -5,17 +5,19 @@ layout: default
 <div class="col-xs-12">
     <div class="blog-post panel panel-default">
         <header class="panel-heading">
-            <h1 class="blog-post-title">
-                <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}">
+            <h1 class="blog-post-title" itemprop="headline name">
+                <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="url">
                     {{ page.title }}
                 </a>
             </h1>
             <p class="blog-post-meta">
-                {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+                <span itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">
+                    {{ page.date | date: "%b %-d, %Y" }}
+                </span>
             </p>
         </header>
 
-        <article class="blog-post-content panel-body">
+        <article class="blog-post-content panel-body" itemprop="articleBody">
             {{ content }}
         </article>
     </div><!-- .blog-post -->

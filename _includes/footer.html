@@ -5,17 +5,17 @@
                 <p class="lead">{{ site.title }}</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
             <div class="col-sm-4">
                 <ul class="contact-list list-unstyled">
                     {% if site.author.name %}
-                        <li>{{ site.author.name }}</li>
+                        <li itemprop="name">{{ site.author.name }}</li>
                     {% endif %}
                     {% if site.author.site %}
-                        <li><a href="{{ site.author.site }}"><i class="fa fa-globe"></i> {{ site.author.site }}</a></li>
+                        <li><a href="{{ site.author.site }}" itemprop="url"><i class="fa fa-globe"></i> {{ site.author.site }}</a></li>
                     {% endif %}
                     {% if site.author.email %}
-                        <li><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
+                        <li><a href="mailto:{{ site.author.email }}" itemprop="email"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -23,21 +23,21 @@
                 <ul class="social-media-list list-unstyled">
                     {% if site.github_username %}
                         <li>
-                            <a href="https://github.com/{{ site.github_username }}">
+                            <a href="https://github.com/{{ site.github_username }}" itemprop="sameAs">
                                 <i class="fa fa-github"></i> {{ site.github_username }}
                             </a>
                         </li>
                     {% endif %}
                     {% if site.facebook.username %}
                         <li>
-                            <a href="https://facebook.com/{{ site.facebook.username }}">
+                            <a href="https://facebook.com/{{ site.facebook.username }}" itemprop="sameAs">
                                 <i class="fa fa-facebook-official"></i> {{ site.facebook.username }}
                             </a>
                         </li>
                     {% endif %}
                     {% if site.twitter_username %}
                         <li>
-                            <a href="https://twitter.com/{{ site.twitter_username }}">
+                            <a href="https://twitter.com/{{ site.twitter_username }}" itemprop="sameAs">
                                 <i class="fa fa-twitter"></i> {{ site.twitter_username }}
                             </a>
                         </li>
@@ -55,3 +55,6 @@
         </div>
     </div>
 </footer>
+
+<meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncatewords: 55 }}{% else %}{{ site.description }}{% endif %}">
+<meta itemprop="image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">

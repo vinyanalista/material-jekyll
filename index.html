@@ -2,58 +2,77 @@
 layout: default
 ---
 
+<meta itemprop="headline name" content="{{ site.title }}">
+<link href="{{ page.url | replace:'index.html', '' | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" itemprop="url">
+
 {% if paginator %}
     {% assign post_list = paginator.posts %}
 {% else %}
     {% assign post_list = site.posts %}
 {% endif %}
-    
-{% for post in post_list %}
-<div class="col-xs-12">
-    <div class="blog-post panel panel-default">
-        <div class="panel-heading">
-            <h2 class="blog-post-title">
-                <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-                    {{ post.title }}
-                </a>
-            </h2>
-            <p class="blog-post-meta">
-                {{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}
-            </p>
-        </div><!-- .panel-heading -->
-        <div class="blog-post-content panel-body">
-            <p>{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
-            <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-                Read more &rsaquo;
-            </a>
-        </div><!-- .blog-post-content -->
-    </div><!-- .blog-post -->
-</div><!-- .col-xs-12 -->
-{% endfor %}
 
-{% if paginator and paginator.total_pages > 1 %}
-<nav>
-    <ul class="pager">
-        <li class="{% if paginator.previous_page %}previous{% else %}disabled previous{% endif %}">
-            <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Newer">
-                &laquo;<span class="hidden-xs"> Newer</span>
-            </a>
-        </li>
-        <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}>
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" aria-label="Next">
-                &lsaquo;<span class="hidden-xs"> Next</span>
-            </a>
-        </li>
-        <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}>
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
-                <span class="hidden-xs">Previous </span>&rsaquo;
-            </a>
-        </li>
-        <li class="{% if paginator.next_page %}next{% else %}disabled next{% endif %}">
-            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}" aria-label="Older">
-                <span class="hidden-xs">Older </span>&raquo;
-            </a>
-        </li>
-    </ul>
-</nav>
-{% endif %}
+<div class="col-xs-12">    
+    {% for post in post_list %}
+        <div class="blog-post panel panel-default" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="panel-heading">
+                <h2 class="blog-post-title" itemprop="headline name">
+                    <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="url">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <p class="blog-post-meta">
+                    <span itemprop="datePublished" content="{{ post.date | date: "%Y-%m-%d" }}">
+                        {{ post.date | date: "%b %-d, %Y" }}
+                    </span>
+                    <meta itemprop="image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
+                    {% if site.author %}
+                        <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            {% if site.author.name %}
+                                <meta itemprop="name" content="{{ site.author.name }}">
+                            {% endif %}
+                            {% if site.author.email %}
+                                <meta itemprop="email" content="{{ site.author.email }}">
+                            {% endif %}
+                            {% if site.author.site %}
+                                <link itemprop="url" href="{{ site.author.site }}">
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </p>
+            </div><!-- .panel-heading -->
+            <div class="blog-post-content panel-body">
+                <p itemprop="description">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
+                <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                    Read more &rsaquo;
+                </a>
+            </div><!-- .blog-post-content -->
+        </div><!-- .blog-post -->
+    {% endfor %}
+
+    {% if paginator and paginator.total_pages > 1 %}
+        <nav>
+            <ul class="pager">
+                <li class="{% if paginator.previous_page %}previous{% else %}disabled previous{% endif %}">
+                    <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Newer">
+                        &laquo;<span class="hidden-xs"> Newer</span>
+                    </a>
+                </li>
+                <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}>
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" aria-label="Next">
+                        &lsaquo;<span class="hidden-xs"> Next</span>
+                    </a>
+                </li>
+                <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}>
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
+                        <span class="hidden-xs">Previous </span>&rsaquo;
+                    </a>
+                </li>
+                <li class="{% if paginator.next_page %}next{% else %}disabled next{% endif %}">
+                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}" aria-label="Older">
+                        <span class="hidden-xs">Older </span>&raquo;
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    {% endif %}
+</div><!-- .col-xs-12 -->
