@@ -15,6 +15,14 @@ author:
 # Building #
 ############
 
+# Encoding
+# Set the encoding of files by name
+# Default: "utf-8"
+# encoding: "utf-8"
+
+# Available encodings can be shown by the command:
+# ruby -e 'puts Encoding::list.join("\n")'
+
 # Excerpt separator
 # Completely disable excerpts by setting your excerpt_separator to ""
 # Default: "\n\n"
