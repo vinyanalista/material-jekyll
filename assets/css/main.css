@@ -24,15 +24,25 @@ body {
     padding: 15px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 469px) {
     body {
         /* Margin bottom by footer height */
-        margin-bottom: 300px;
+        margin-bottom: 325px;
     }
 
     .footer {
         /* Set the fixed height of the footer here */
-        height: 300px;
+        height: 325px;
+    }
+}
+
+@media (min-width: 470px) and (max-width: 767px) {
+    body {
+        margin-bottom: 285px;
+    }
+
+    .footer {
+        height: 285px;
     }
 }
 

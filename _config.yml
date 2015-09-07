@@ -11,6 +11,10 @@ author:
     # Default: not set (author email is not displayed)
     email: your-email@yourdomain.com
 
+    # Site's author website, profile
+    # Default: not set (author site is not displayed)
+    site: http://yourdomain.com
+
 ############
 # Building #
 ############
