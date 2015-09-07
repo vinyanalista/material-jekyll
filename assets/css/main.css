@@ -22,6 +22,15 @@ h6, .h6 {
     background-color: #F5F5F5;
 }
 
+/* Brand */
+
+@media (min-width: 350px) {
+    a.navbar-brand {
+        background: url(../favicons/favicon-32x32.png) 15px no-repeat;
+        padding-left: 60px !important;
+    }
+}
+
 /* Footer */
 
 .footer {
