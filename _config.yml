@@ -92,6 +92,32 @@ description: > # this means to ignore newlines until the text ends
 # Social networks #
 ###################
 
+facebook:
+    # Facebook Application ID
+    # You may associate your site with a Facebook App so you can measure your
+    # site's performance on Facebook using Facebook Insights. After the App is
+    # created, inform the Facebook App ID here.
+    # Default: not set (the site is not bound to any Facebook App)
+    # app_id: 123456789012345
+
+    # For more info on Facebook Insights, please refer to
+    # https://developers.facebook.com/docs/platforminsights/domains
+
+    # Facebook Page ID
+    # If your site has a corresponding Facebook Page, inform its ID here
+    # Example: 123456, if your page is at https://facebook.com/Page-Name/123456
+    # page_id: 1234567890123456
+
+    # For more info on Facebook Pages, please refer to
+    # https://www.facebook.com/about/pages
+
+    # Facebook username
+    # Examples:
+    # username, if your profile is at https://facebook.com/username or
+    # Page-Name/123456, if your page is at https://facebook.com/Page-Name/123456
+    # Default: not set (Facebook URL is not displayed)
+    # username: "username"
+
 # GitHub username
 # Example: jekyll, if your GitHub URL is https://github.com/jekyll
 # Default: not set (GitHub URL is not displayed)
@@ -101,3 +127,21 @@ github_username:  jekyll
 # Example: jekyllrb, if your Twitter URL is https://twitter.com/jekyllrb
 # Default: not set (Twitter URL is not displayed)
 twitter_username: jekyllrb
+
+#####################
+# YAML Front Matter #
+#####################
+
+defaults:
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            # Allows one to use {{ page.is_post }} to check whether the page is
+            # a post, as seen on http://stackoverflow.com/a/23555679/1657502
+            is_post: true
+
+# For more info on YAML Front Matter and its configuration, please refer to
+# https://jekyllrb.com/docs/frontmatter/
+# https://jekyllrb.com/docs/configuration/#front-matter-defaults

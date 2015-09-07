@@ -25,6 +25,13 @@
                             </a>
                         </li>
                     {% endif %}
+                    {% if site.facebook.username %}
+                        <li>
+                            <a href="https://facebook.com/{{ site.facebook.username }}">
+                                <i class="fa fa-facebook-official"></i> {{ site.facebook.username }}
+                            </a>
+                        </li>
+                    {% endif %}
                     {% if site.twitter_username %}
                         <li>
                             <a href="https://twitter.com/{{ site.twitter_username }}">
