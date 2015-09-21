@@ -83,13 +83,13 @@ google:
 # Site URL
 # The base protocol and hostname for the website
 # Default: not set (this variable is only necessary for external systems)
-# url: "https://yourdomain.com"
+url: "https://vinyanalista.github.io"
 
 # Enforce the use of HTTPS on production domain
 # The hostname (does not include protocol, just the domain) for which the use of
 # HTTPS should be enforced
 # Default: not set (the use of HTTPS is never enforced)
-# enforce_https: "yourdomain.com"
+enforce_https: "vinyanalista.github.io"
 
 ###########
 # Serving #
@@ -98,7 +98,7 @@ google:
 # Base URL
 # Serve the website from the given base URL (does not include hostname)
 # Default: "" (website is at the root of the domain)
-# baseurl: ""
+baseurl: "/material-jekyll"
 
 # For more info on the serve command options, please refer to
 # http://jekyllrb.com/docs/configuration/
