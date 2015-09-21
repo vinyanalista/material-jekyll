@@ -11,6 +11,9 @@
                     {% if site.author.name %}
                         <li>{{ site.author.name }}</li>
                     {% endif %}
+                    {% if site.author.site %}
+                        <li><a href="{{ site.author.site }}"><i class="fa fa-globe"></i> {{ site.author.site }}</a></li>
+                    {% endif %}
                     {% if site.author.email %}
                         <li><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
                     {% endif %}

@@ -11,9 +11,21 @@ author:
     # Default: not set (author email is not displayed)
     email: your-email@yourdomain.com
 
+    # Site's author website, profile
+    # Default: not set (author site is not displayed)
+    site: http://yourdomain.com
+
 ############
 # Building #
 ############
+
+# Encoding
+# Set the encoding of files by name
+# Default: "utf-8"
+# encoding: "utf-8"
+
+# Available encodings can be shown by the command:
+# ruby -e 'puts Encoding::list.join("\n")'
 
 # Excerpt separator
 # Completely disable excerpts by setting your excerpt_separator to ""
@@ -87,6 +99,15 @@ description: > # this means to ignore newlines until the text ends
     Write an awesome description for your new site here. You can edit this
     line in _config.yml. It will appear in your document head meta (for
     Google search results) and in your feed.xml site description.
+
+# Site language
+# A language tag following the language tag syntax (IETF's BCP 47). This is
+# meant to assist search engines and browsers.
+# Default: not set (do not associate any language with this site's content)
+lang: en
+
+# For more info on language tags, please refer to
+# http://www.w3.org/International/articles/language-tags/
 
 ###################
 # Social networks #
