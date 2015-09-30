@@ -18,6 +18,9 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
+    <!-- OpenSearch -->
+    <link rel="search" type="application/opensearchdescription+xml" title="Search {{ site.title }}" href="{{ '/opensearch.xml' | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" />
+
     <!-- Open Graph -->
     {% if page.is_post %}
         <meta property="article:published_time" content="{{ page.date }}"/>
