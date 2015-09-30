@@ -153,3 +153,14 @@ h6, .h6 {
 .blog-post-meta {
     color: #999;
 }
+
+/* http://getbootstrap.com/getting-started/#third-parties */
+
+.reset-box-sizing,
+.reset-box-sizing *,
+.reset-box-sizing *:before,
+.reset-box-sizing *:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}

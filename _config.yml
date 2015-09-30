@@ -61,6 +61,18 @@ google:
     # For more info on Google Analytic, please refer to
     # https://support.google.com/analytics/
 
+    # Google Custom Search Engine ID
+    # Allows visitors to search the website without leaving it, using a custom
+    # search engine powered by Google.
+    # Default: not set (instead of a CSE, Google is used to handle searching)
+    # cse_id: 123456789012345678901:abcdefghijk
+
+    # If you do not know your CSE ID, take a look at
+    # https://support.google.com/customsearch/answer/2649143
+
+    # For more info on Google Custom Search Engine, please refer to
+    # https://support.google.com/customsearch/
+
 ##############
 # Pagination #
 ##############

@@ -21,8 +21,11 @@
                 {% endfor %}
             </ul>
         </div><!-- #navbar -->
-        <form action="https://www.google.com/search" class="navbar-form" id="search-form" method="get" role="search">
-            <input type="hidden" name="as_sitesearch" value="{{ site.baseurl | prepend: site.url }}" />
+        <form action="{% if site.google.cse_id %}{{ "/search/" | prepend: site.baseurl }}{% else %}https://www.google.com/search{% endif %}" class="navbar-form" id="search-form" method="get" role="search">
+            {% if site.google.cse_id %}
+            {% else %}
+                <input type="hidden" name="as_sitesearch" value="{{ site.baseurl | prepend: site.url }}" />
+            {% endif %}
             <input type="text" class="form-control" id="search-input" name="q" placeholder="Search" />
             <a class="mdi-action-search" id="search-button"></a>
         </form>
