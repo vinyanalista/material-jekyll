@@ -165,6 +165,8 @@ lang: en
 # Social networks #
 ###################
 
+# addthis_profile_id: "ra-example123456789"
+
 # Disqus shortname
 # Disqus is a blog comment hosting service for websites. A Disqus shortname is
 # the unique identifier assigned to a Disqus site. All the comments posted to a

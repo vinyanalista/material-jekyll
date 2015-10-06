@@ -154,6 +154,28 @@ h6, .h6 {
     color: #999;
 }
 
+@media (max-width: 767px) {
+    .blog-post-date, .blog-post-share {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .blog-post-share {
+        width: 140px;
+    }
+}
+
+@media (min-width: 768px) {
+    .blog-post-date {
+        text-align: left;
+    }
+
+    .blog-post-share {
+        float: right !important;
+    }
+}
+
 /* http://getbootstrap.com/getting-started/#third-parties */
 
 .reset-box-sizing,

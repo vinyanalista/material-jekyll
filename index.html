@@ -22,10 +22,28 @@ layout: default
                         {{ post.title }}
                     </a>
                 </h2>
-                <p class="blog-post-meta">
-                    <span itemprop="datePublished" content="{{ post.date | date: "%Y-%m-%d" }}">
-                        {{ post.date | date: "%b %-d, %Y" }}
-                    </span>
+                <div class="blog-post-meta row">
+                    <div class='col-sm-6'>
+                        <p class="blog-post-date" itemprop="datePublished" content="{{ post.date | date: "%Y-%m-%d" }}">
+                            {{ post.date | date: "%b %-d, %Y" }}
+                        </p>
+                    </div>
+                    <div class='col-sm-6'>
+                        {% if site.addthis_profile_id %}
+                            <div class='blog-post-share'>
+                                <!-- AddThis Sharing Buttons -->
+                                <div class="addthis_toolbox addthis_default_style" addthis:url="{{ post.url | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" addthis:title="{{ post.title }}" addthis:description="{{ post.excerpt | strip_html | strip_html | truncatewords: 55 }}">
+                                    <a class="addthis_button_facebook"></a>
+                                    <a class="addthis_button_twitter"{% if site.twitter_username %} data-via="{{ site.twitter_username }}"{% endif %}></a>
+                                    <a class="addthis_button_google_plusone_share"></a>
+                                    <a class="addthis_button_favorites"></a>
+                                    <a class="addthis_button_compact"></a>
+                                    <a class="addthis_counter addthis_bubble_style"></a>
+                                </div>
+                                <!-- AddThis Sharing Buttons End -->
+                            </div><!-- .blog-post-share -->
+                        {% endif %}
+                    </div><!-- .col-sm-6 -->
                     <meta itemprop="image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
                     {% if site.author %}
                         <div itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -40,7 +58,7 @@ layout: default
                             {% endif %}
                         </div>
                     {% endif %}
-                </p>
+                </div><!-- .blog-post-meta -->
             </div><!-- .panel-heading -->
             <div class="blog-post-content panel-body">
                 <div class="row">
