@@ -46,6 +46,9 @@ layout: default
                 <div class="row">
                     <div class="col-xs-12">
                         <p itemprop="description">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
+                        {% if site.disqus_shortname %}
+                            <a class='btn btn-primary pull-left' href="{{ '#disqus_thread' | prepend: post.url | prepend: site.baseurl | replace: '//', '/' }}">Comments</a>
+                        {% endif %}
                         <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
                             Read more &rsaquo;
                         </a>

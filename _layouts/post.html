@@ -32,13 +32,40 @@ layout: default
                 </div>
             </div>
 
-             {% if site.google.adsense.ad_unit_2 %}
+            {% if site.google.adsense.ad_unit_2 %}
                 <div class="row">
                     <div class="col-xs-12">
                         {% include adsense.html id="ad_unit_2" ad_slot=site.google.adsense.ad_unit_2 %}
                     </div><!-- .col-xs-12 -->
                 </div><!-- .row -->
             {% endif %}
-        </article>       
+
+            {% if site.disqus_shortname %}
+                <!-- Disqus -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            /* * * CONFIGURATION VARIABLES * * */
+                            var disqus_shortname = '{{ site.disqus_shortname }}';
+                            var disqus_url = '{{ page.url | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}';
+
+                            /* * * DON'T EDIT BELOW THIS LINE * * */
+                            (function() {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript';
+                                dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>
+                            <p>Please <a href="http://www.enable-javascript.com/" target="_blank">enable JavaScript</a> to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.</p>
+                        </noscript>
+                    </div><!-- .col-xs-12 -->
+                </div><!-- .row -->
+                <!-- Disqus End -->
+            {% endif %}
+        </article>
     </div><!-- .blog-post -->
 </div><!-- .col-xs-12 -->

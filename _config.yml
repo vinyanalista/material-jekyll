@@ -165,6 +165,21 @@ lang: en
 # Social networks #
 ###################
 
+# Disqus shortname
+# Disqus is a blog comment hosting service for websites. A Disqus shortname is
+# the unique identifier assigned to a Disqus site. All the comments posted to a
+# site are referenced with the shortname. The shortname tells Disqus to load
+# only your site's comments, as well as the settings specified in your Disqus
+# admin.
+# Default: not set (do not use Disqus to handle comments)
+# disqus_shortname: "my_disqus_shortname"
+
+# If you do not know your Disqus shortname, take a look at
+# https://help.disqus.com/customer/portal/articles/466208
+
+# For more info on Disqus, please refer to
+# https://help.disqus.com/
+
 facebook:
     # Facebook Application ID
     # You may associate your site with a Facebook App so you can measure your
@@ -194,12 +209,12 @@ facebook:
 # GitHub username
 # Example: jekyll, if your GitHub URL is https://github.com/jekyll
 # Default: not set (GitHub URL is not displayed)
-github_username:  jekyll
+github_username: "jekyll"
 
 # Twitter username
 # Example: jekyllrb, if your Twitter URL is https://twitter.com/jekyllrb
 # Default: not set (Twitter URL is not displayed)
-twitter_username: jekyllrb
+twitter_username: "jekyllrb"
 
 #####################
 # YAML Front Matter #
