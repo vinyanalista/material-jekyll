@@ -112,4 +112,19 @@
         </script>
         <!-- End Google Analytics -->
     {% endif %}
+
+    {% if site.google.adsense.publisher_id %}
+        <!-- Google AdSense -->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            adsbygoogle = window.adsbygoogle || [];
+
+            $(document).ready(function(){
+                $('.adsbygoogle').each(function(index, element){
+                    adsbygoogle.push({});
+                });
+            });
+        </script>
+        <!-- End Google AdSense -->
+    {% endif %}
 </head>

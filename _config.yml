@@ -73,6 +73,30 @@ google:
     # For more info on Google Custom Search Engine, please refer to
     # https://support.google.com/customsearch/
 
+    # Google AdSense settings
+    # Allows to earn money by showing ads on the website.
+    adsense:
+        # Google AdSense publisher ID
+        # Your publisher ID is the unique identifier for your AdSense account.
+        # Default: not set (Google AdSense is not used to show ads)
+        # publisher_id: ca-pub-1234567890123456
+
+        # If you do not know your publisher ID, take a look at
+        # https://support.google.com/adsense/answer/105516
+
+        # Ad unit ID for the ad displayed at the top of the website
+        # Default: not set (no ad is displayed at the top)
+        # ad_unit_1: 1234567890
+
+        # Ad unit ID for the ad displayed at the bottom of the website
+        # Default: not set (no ad is displayed at the bottom)
+        # ad_unit_2: 0987654321
+
+        # Note: use only responsive ad units
+
+    # For more info on Google AdSense, please refer to
+    # https://support.google.com/adsense/
+
 ##############
 # Pagination #
 ##############

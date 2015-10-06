@@ -11,8 +11,10 @@ layout: default
     {% assign post_list = site.posts %}
 {% endif %}
 
-<div class="col-xs-12">    
+<div class="col-xs-12">
+    {% assign P = post_list | size %}
     {% for post in post_list %}
+        {% assign p = p | plus: 1 %}
         <div class="blog-post panel panel-default" itemscope itemtype="http://schema.org/BlogPosting">
             <div class="panel-heading">
                 <h2 class="blog-post-title" itemprop="headline name">
@@ -41,10 +43,29 @@ layout: default
                 </p>
             </div><!-- .panel-heading -->
             <div class="blog-post-content panel-body">
-                <p itemprop="description">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
-                <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-                    Read more &rsaquo;
-                </a>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p itemprop="description">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
+                        <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                            Read more &rsaquo;
+                        </a>
+                    </div>
+                </div><!-- .row -->
+
+                {% if p == 1 and site.google.adsense.ad_unit_1 %}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {% include adsense.html id="ad_unit_1" ad_slot=site.google.adsense.ad_unit_1 %}
+                        </div><!-- .col-xs-12 -->
+                    </div><!-- .row -->
+                {% elsif p == P and site.google.adsense.ad_unit_2 %}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {% include adsense.html id="ad_unit_2" ad_slot=site.google.adsense.ad_unit_2 %}
+                        </div><!-- .col-xs-12 -->
+                    </div><!-- .row -->
+                {% endif %}
+
             </div><!-- .blog-post-content -->
         </div><!-- .blog-post -->
     {% endfor %}

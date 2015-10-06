@@ -164,3 +164,10 @@ h6, .h6 {
      -moz-box-sizing: content-box;
           box-sizing: content-box;
 }
+
+/* Google AdSense */
+
+.adsbygoogle {
+    display: block;
+    margin: 1em;
+}
