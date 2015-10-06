@@ -17,24 +17,28 @@ layout: default
             </p>
         </header>
 
-        {% if site.google.adsense.ad_unit_1 %}
-            <div class="row">
-                <div class="col-xs-12">
-                    {% include adsense.html id="ad_unit_1" ad_slot=site.google.adsense.ad_unit_1 %}
-                </div><!-- .col-xs-12 -->
-            </div><!-- .row -->
-        {% endif %}
-
         <article class="blog-post-content panel-body" itemprop="articleBody">
-            {{ content }}
-        </article>
+            {% if site.google.adsense.ad_unit_1 %}
+                <div class="row">
+                    <div class="col-xs-12">
+                        {% include adsense.html id="ad_unit_1" ad_slot=site.google.adsense.ad_unit_1 %}
+                    </div><!-- .col-xs-12 -->
+                </div><!-- .row -->
+            {% endif %}
 
-        {% if site.google.adsense.ad_unit_2 %}
             <div class="row">
                 <div class="col-xs-12">
-                    {% include adsense.html id="ad_unit_2" ad_slot=site.google.adsense.ad_unit_2 %}
-                </div><!-- .col-xs-12 -->
-            </div><!-- .row -->
-        {% endif %}
+                    {{ content }}
+                </div>
+            </div>
+
+             {% if site.google.adsense.ad_unit_2 %}
+                <div class="row">
+                    <div class="col-xs-12">
+                        {% include adsense.html id="ad_unit_2" ad_slot=site.google.adsense.ad_unit_2 %}
+                    </div><!-- .col-xs-12 -->
+                </div><!-- .row -->
+            {% endif %}
+        </article>       
     </div><!-- .blog-post -->
 </div><!-- .col-xs-12 -->
