@@ -200,3 +200,7 @@ em.caption {
     display: block;
     margin-top: 1em;
 }
+
+.embed-responsive {
+    margin: 0px 0px 1em;
+}
