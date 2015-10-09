@@ -193,3 +193,10 @@ h6, .h6 {
     display: block;
     margin: 1em;
 }
+
+/* Images */
+
+em.caption {
+    display: block;
+    margin-top: 1em;
+}
