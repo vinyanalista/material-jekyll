@@ -165,7 +165,18 @@ lang: en
 # Social networks #
 ###################
 
+# AddThis profile ID
+# AddThis is a content sharing platform. It can be used to better integrate the
+# website with social networks. An AddThis profile contains configuration options
+# and analytics data for a website.
+# Default: not set (AddThis is not used to handle social networks integration)
 # addthis_profile_id: "ra-example123456789"
+
+# If you do not know your AddThis profile ID, you can find it at
+# https://www.addthis.com/settings/publisher
+
+# For more info on AddThis, please refer to
+# http://support.addthis.com/
 
 # Disqus shortname
 # Disqus is a blog comment hosting service for websites. A Disqus shortname is
@@ -208,15 +219,46 @@ facebook:
     # Default: not set (Facebook URL is not displayed)
     # username: "username"
 
+# Foursquare username
+# Example: username, if your Foursquare URL is https://foursquare.com/username
+# Default: not set (Foursquare URL is not displayed)
+# foursquare_username: "username"
+
 # GitHub username
 # Example: jekyll, if your GitHub URL is https://github.com/jekyll
 # Default: not set (GitHub URL is not displayed)
 github_username: "jekyll"
 
+# Google Plus user ID
+# Example: 123456789098765432123, if your Google Plus URL is
+# https://plus.google.com/123456789098765432123
+# Default: not set (Google Plus URL is not displayed)
+# google_plus_user_id: 123456789098765432123
+
+# LinkedIn username
+# Example: username, if your LinkedIn public profile URL is
+# https://www.linkedin.com/in/username
+# Default: not set (LinkedIn public profile URL is not displayed)
+# linkedin_username: "username"
+
 # Twitter username
 # Example: jekyllrb, if your Twitter URL is https://twitter.com/jekyllrb
 # Default: not set (Twitter URL is not displayed)
 twitter_username: "jekyllrb"
+
+youtube:
+    # What kind of YouTube profile you have (it can be "user" or "channel")
+    # Default: not set (YouTube URL is not displayed)
+    # profile: "user"
+
+    # YouTube user or channel name
+    # Examples:
+    # username, if your YouTube personal profile is at
+    # https://www.youtube.com/user/username or
+    # channelname, if your YouTube channel is at
+    # https://www.youtube.com/channel/channelname
+    # Default: not set (YouTube URL is not displayed)
+    # name: "username"
 
 #####################
 # YAML Front Matter #
