@@ -114,7 +114,11 @@
 </footer>
 
 <meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncatewords: 55 }}{% else %}{{ site.description }}{% endif %}">
-<meta itemprop="image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
+{% if page.image %}
+    <meta itemprop="image" content="{{ page.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
+{% elsif site.image %}
+    <meta itemprop="image" content="{{ site.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
+{% endif %}
 
 {% if site.disqus_shortname %}
     <!-- Disqus -->

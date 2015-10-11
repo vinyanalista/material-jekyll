@@ -44,7 +44,6 @@ layout: default
                             </div><!-- .blog-post-share -->
                         {% endif %}
                     </div><!-- .col-sm-6 -->
-                    <meta itemprop="image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
                     {% if site.author %}
                         <div itemprop="author" itemscope itemtype="http://schema.org/Person">
                             {% if site.author.name %}
@@ -62,7 +61,22 @@ layout: default
             </div><!-- .panel-heading -->
             <div class="blog-post-content panel-body">
                 <div class="row">
+                    {% if post.image or site.image %}
+                    <div class='col-sm-4'>
+                        <p class='text-center'>
+                            <a href='{{ post.url | prepend: site.baseurl | replace: '//', '/' }}'>
+                                {% if post.image %}
+                                    <img src='{{ post.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}' class='img-responsive img-thumbnail' itemprop="image">
+                                {% elsif site.image %}
+                                    <img src='{{ site.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}' class='img-responsive img-thumbnail' itemprop="image">
+                                {% endif %}
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-sm-8">
+                    {% else %}
                     <div class="col-xs-12">
+                    {% endif %}
                         <p itemprop="description">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
                         {% if site.disqus_shortname %}
                             <a class='btn btn-primary pull-left' href="{{ '#disqus_thread' | prepend: post.url | prepend: site.baseurl | replace: '//', '/' }}">Comments</a>
