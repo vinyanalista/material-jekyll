@@ -14,11 +14,12 @@ It is built on top of the [Jekyll's default site template](https://github.com/je
 - [Material Design for Bootstrap](http://fezvrasta.github.io/bootstrap-material-design/) (MIT License)
 - [Font Awesome](http://fontawesome.io) (SIL OFL 1.1 and MIT License)
 
-Since it does not use any [Jekyll plugin](http://jekyllrb.com/docs/plugins/), it is out of the box compatible with [GitHub Pages](https://pages.github.com/) (in fact, the live demo itself is hosted on GitHub Pages).
+This template is out of the box compatible with [GitHub Pages](https://pages.github.com/) (in fact, the live demo itself is hosted on GitHub Pages). The only [Jekyll plugin](http://jekyllrb.com/docs/plugins/) it uses is the [Jekyll Sitemap Generator Plugin](https://github.com/jekyll/jekyll-sitemap), which is one of the [plugins supported by GitHub Pages](https://help.github.com/articles/using-jekyll-plugins-with-github-pages/).
 
 To get a site based on this template up and running, just [install Jekyll](http://jekyllrb.com/docs/installation/), download and extract the template and then, from the command line, run:
 
 ```
+$ bundle
 $ jekyll serve
 ```
 

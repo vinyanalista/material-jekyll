@@ -112,6 +112,16 @@ google:
 # For more info on pagination, please refer to
 # http://jekyllrb.com/docs/pagination/
 
+###########
+# Plugins #
+###########
+
+gems:
+    # Jekyll Sitemap Generator Plugin
+    # https://github.com/jekyll/jekyll-sitemap
+    # Plugin to silently generate a sitemaps.org compliant sitemap for your site
+    - jekyll-sitemap
+
 ##############
 # Publishing #
 ##############
