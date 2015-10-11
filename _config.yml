@@ -35,6 +35,12 @@ excerpt_separator: <!--more-->
 # For more info on post excerpts, please refer to
 # http://jekyllrb.com/docs/posts/#post-excerpts
 
+# Exclude
+# Exclude directories and/or files from the conversion. These exclusions are
+# relative to the site's source directory and cannot be outside the source
+# directory.
+exclude: ['Gemfile', 'Gemfile.lock', 'LICENSE', 'README.md']
+
 # Markdown renderer
 # Sets the Markdown renderer to be used by Jekyll (kramdown, redcarpet or your
 # own)
