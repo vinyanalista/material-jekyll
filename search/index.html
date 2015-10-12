@@ -3,43 +3,45 @@ layout: default
 sitemap: false
 ---
 
-<div class="col-xs-12">
-    <div class="blog-post panel panel-default">
-        <header class="panel-heading">
-            <h1 class="blog-post-title" itemprop="headline name">
-                {% if site.google.cse_id %}
-                Search results
-                {% else %}
-                Got lost?
-                {% endif %}
-            </h1>
-        </header>
-
-        <article class="blog-post-content panel-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
+<div class="blog-post panel panel-default">
+    <header class="panel-heading">
+        <h1 class="blog-post-title" itemprop="headline name">
             {% if site.google.cse_id %}
-                <div class="reset-box-sizing">
-                    <script>
-                        (function() {
-                            var cx = '{{ site.google.cse_id }}';
-                            var gcse = document.createElement('script');
-                            gcse.type = 'text/javascript';
-                            gcse.async = true;
-                            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                                '//cse.google.com/cse.js?cx=' + cx;
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(gcse, s);
-                        })();
-                    </script>
-                    <gcse:searchresults-only></gcse:searchresults-only>
-                </div>
+                Search results
             {% else %}
-                <p>Please, use the search form above.</p>
-                <script>
-                    $(document).ready(function(){
-                        $('#search-button').click();
-                    });
-                </script>
+                Got lost?
             {% endif %}
-        </article>
-    </div><!-- .blog-post -->
-</div><!-- .col-xs-12 -->
+        </h1>
+    </header>
+
+    <article class="blog-post-content panel-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
+        {% if !site.google.cse_id and site.google.adsense.content_ad_unit_1 %}
+            {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
+        {% endif %}
+
+        {% if site.google.cse_id %}
+            <div class="reset-box-sizing">
+                <script>
+                    (function() {
+                        var cx = '{{ site.google.cse_id }}';
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                    })();
+                </script>
+                <gcse:searchresults-only></gcse:searchresults-only>
+            </div>
+        {% else %}
+            <p>Please, use the search form above.</p>
+            <script>
+                $(document).ready(function(){
+                    $('#search-button').click();
+                });
+            </script>
+        {% endif %}       
+    </article>
+</div><!-- .blog-post -->

@@ -90,13 +90,21 @@ google:
         # If you do not know your publisher ID, take a look at
         # https://support.google.com/adsense/answer/105516
 
-        # Ad unit ID for the ad displayed at the top of the website
+        # Ad unit ID for the ad displayed at the top of the page content, bellow
+        # the title, if in a page or post, or after the first post, if in a post
+        # listing
         # Default: not set (no ad is displayed at the top)
-        # ad_unit_1: 1234567890
+        # content_ad_unit_1: 1234567890
 
-        # Ad unit ID for the ad displayed at the bottom of the website
-        # Default: not set (no ad is displayed at the bottom)
-        # ad_unit_2: 0987654321
+        # Ad unit ID for the ad displayed inside the page content, randomly
+        # placed between paragraphs, if in a page or post, or between posts, if
+        # in a post listing
+        # Default: not set (no ad is displayed in the page content)
+        # content_ad_unit_2: 0987654321
+
+        # Ad unit ID for the ad displayed in the sidebar
+        # Default: not set (no ad is displayed in the sidebar)
+        # sidebar_ad_unit: 1231231231
 
         # Note: use only responsive ad units
 

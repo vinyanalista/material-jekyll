@@ -2,38 +2,24 @@
 layout: default
 ---
 
-<div class="col-xs-12">
-    <div class="blog-post panel panel-default">
-        <header class="panel-heading">
-            <h1 class="blog-post-title" itemprop="headline name">
-                <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="url">
-                    {{ page.title }}
-                </a>
-            </h1>
-        </header>
+<div class="blog-post panel panel-default">
+    <header class="panel-heading">
+        <h1 class="blog-post-title" itemprop="headline name">
+            <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="url">
+                {{ page.title }}
+            </a>
+        </h1>
+    </header>
 
-        <article class="blog-post-content panel-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-            {% if site.google.adsense.ad_unit_1 %}
-                <div class="row">
-                    <div class="col-xs-12">
-                        {% include adsense.html id="ad_unit_1" ad_slot=site.google.adsense.ad_unit_1 %}
-                    </div><!-- .col-xs-12 -->
-                </div><!-- .row -->
-            {% endif %}
+    <article class="blog-post-content panel-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
+        {% if site.google.adsense.content_ad_unit_1 %}
+            {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
+        {% endif %}
 
-            <div class="row">
-                <div class="col-xs-12">
-                    {{ content }}
-                </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{ content }}
             </div>
-
-            {% if site.google.adsense.ad_unit_2 %}
-                <div class="row">
-                    <div class="col-xs-12">
-                        {% include adsense.html id="ad_unit_2" ad_slot=site.google.adsense.ad_unit_2 %}
-                    </div><!-- .col-xs-12 -->
-                </div><!-- .row -->
-            {% endif %}
-        </article>
-    </div><!-- .blog-post -->
-</div><!-- .col-xs-12 -->
+        </div>
+    </article>
+</div><!-- .blog-post -->
