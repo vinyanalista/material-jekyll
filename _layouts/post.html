@@ -45,8 +45,28 @@ layout: default
             </div>
         </div>
 
+        {% if site.addthis_profile_id %}
+            <!-- AddThis Sharing Buttons -->
+            <div class="gap"></div>
+            <h2>Did you like it? What about sharing?</h2>
+            <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                <a class="addthis_button_facebook"></a>
+                <a class="addthis_button_twitter"></a>
+                <a class="addthis_button_google_plusone_share"></a>
+                <a class="addthis_button_email"></a>
+                <a class="addthis_button_favorites"></a>
+                <a class="addthis addthis_button_print"></a>
+                <a class="addthis_button_pdfonline"></a>
+                <a class="addthis_button_compact"></a>
+                <a class="addthis_counter addthis_bubble_style"></a>
+            </div>
+            <!-- AddThis Sharing Buttons End -->
+        {% endif %}
+
         {% if site.disqus_shortname %}
             <!-- Disqus -->
+            <div class="gap"></div>
+            <h2>Comments</h2>
             <div class="row">
                 <div class="col-xs-12">
                     <div id="disqus_thread"></div>

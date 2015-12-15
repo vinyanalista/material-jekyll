@@ -12,13 +12,21 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                {% for page in site.pages %}
-                    {% if page.title %}
+                {% if site.navigation %}
+                    {% for link in site.navigation %}
                         <li>
-                            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                            <a href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
                         <li>
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    {% for page in site.pages %}
+                        {% if page.title %}
+                            <li>
+                                <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                            <li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </ul>
         </div><!-- #navbar -->
         <form action="{% if site.google.cse_id %}{{ "/search/" | prepend: site.baseurl }}{% else %}https://www.google.com/search{% endif %}" class="navbar-form" id="search-form" method="get" role="search">

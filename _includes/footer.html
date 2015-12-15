@@ -10,9 +10,7 @@
     </div>
 </footer>
 
-{% if page.excerpt %}
-    <meta itemprop="description" content="{{ page.excerpt | strip_html | strip_newlines | truncatewords: 55 }}">
-{% endif %}
+<meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncatewords: 55 }}{% else %}{{ site.description }}{% endif %}">
 
 {% if page.image %}
     <meta itemprop="image" content="{{ page.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
@@ -20,10 +18,19 @@
     <meta itemprop="image" content="{{ site.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
 {% endif %}
 
+{% if site.lang %}
+    <meta itemprop="inLanguage" content="{{ site.lang }}"/>
+{% endif %}
+
 {% if site.disqus_shortname %}
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
+        {% if site.lang %}
+            var disqus_config = function () {
+                this.language = "{{ site.lang }}";
+            };
+        {% endif %}
         var disqus_shortname = '{{ site.disqus_shortname }}';
         
         /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -48,7 +55,7 @@
 
         $(document).ready(function(){
             {% if site.google.adsense.content_ad_unit_2 %}
-                var $ad = $('#content_ad_unit_2');
+                var $ad = $('#content_ad_unit_2').closest('.row');
                 if ($('.blog-post').length > 1) {
                     // Post listing
                     var $posts = $('.blog-post');

@@ -51,6 +51,14 @@ exclude: ['Gemfile', 'Gemfile.lock', 'LICENSE', 'README.md']
 # to create custom renderers, please refer to
 # http://jekyllrb.com/docs/configuration/#markdown-options
 
+# Permalink
+# Set the site’s URLs style
+# Default: date
+permalink: pretty
+
+# For more info on permalinks, please refer to
+# http://jekyllrb.com/docs/permalinks/
+
 ######################
 # Google integration #
 ######################
@@ -190,6 +198,17 @@ lang: en
 
 # For more info on language tags, please refer to
 # http://www.w3.org/International/articles/language-tags/
+
+# Navigation bar
+# Allows to customize the links shown on the navigation bar
+# Default: not set (links to all pages are shown)
+# navigation:
+#     -
+#         title: "Link one"
+#         url: "/link/one/"
+#     -
+#         title: "Link two"
+#         url: "/link/two/"
 
 ###################
 # Social networks #
