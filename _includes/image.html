@@ -1,9 +1,9 @@
-<p class='text-center'>
-    <a href='{{ include.src }}' title='{{ include.caption }}'>
-        <img src='{{ include.src }}' alt='{{ include.caption }}' class='img-responsive img-thumbnail'>
+<p class='text-center' itemscope itemtype='http://schema.org/ImageObject'>
+    <a href='{% if include.link %}{{ include.link }}{% else %}{{ include.src }}{% endif %}' title='{{ include.caption }}'>
+        <img src='{{ include.src }}' alt='{{ include.caption }}' class='img-responsive img-thumbnail' itemprop='contentUrl'>
     </a>
     {% if include.caption %}
-    <em class='caption'>
+    <em class='caption' itemprop='description'>
         {{ include.caption }}
     </em>
     {% endif %}

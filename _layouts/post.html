@@ -5,7 +5,7 @@ layout: default
 <div class="blog-post panel panel-default">
     <header class="panel-heading">
         <h1 class="blog-post-title" itemprop="headline name">
-            <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="url">
+            <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="mainEntityOfPage url">
                 {{ page.title }}
             </a>
         </h1>
@@ -14,6 +14,7 @@ layout: default
                 <p class="blog-post-date" itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">
                     {{ page.date | date: "%b %-d, %Y" }}
                 </p>
+                <!--<meta itemprop="dateModified" content="" />--><!-- TODO Last modified date -->
             </div>
             <div class='col-sm-6'>
                 {% if site.addthis_profile_id %}
@@ -34,12 +35,12 @@ layout: default
         </div><!-- .blog-post-meta -->
     </header>
 
-    <article class="blog-post-content panel-body" itemprop="articleBody">
+    <article class="blog-post-content panel-body">
         {% if site.google.adsense.content_ad_unit_1 %}
             {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
         {% endif %}
 
-        <div class="row">
+        <div class="row" itemprop="articleBody mainEntity">
             <div class="col-xs-12">
                 {{ content }}
             </div>

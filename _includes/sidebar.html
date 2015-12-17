@@ -2,13 +2,20 @@
     <div class="panel-heading">
         <h3><a name="about"></a>About</h3>
     </div>
-    <div class="panel-body">
-        <p class="lead">
-            <a href="{{ site.baseurl | prepend: site.url }}">
-                {{ site.title }}
+    <div class="panel-body" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <p class='text-center' itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
+            <a href='{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}' itemprop='url'>
+                <img src='{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}' class='img-responsive img-thumbnail'>
+            </a>
+            <!--<meta itemprop="width" content=""/>--><!-- TODO Image width -->
+            <!--<meta itemprop="height" content=""/>--><!-- TODO Image height -->
+        </p>
+        <p class="lead text-center">
+            <a href="{{ site.baseurl | prepend: site.url }}" itemprop="url">
+                <span itemprop="name">{{ site.title }}</span>
             </a>
         </p>
-        <p class="text"{% if !page.excerpt %} itemprop="description"{% endif %}>
+        <p class="text" itemprop="description">
             {{ site.description }}
         </p>
     </div><!-- .panel-body -->
@@ -18,22 +25,20 @@
     <div class="panel-heading">
         <h3><a name="author"></a>Author</h3>
     </div>
-    <div class="panel-body">
-        <div itemprop="author" itemscope itemtype="http://schema.org/Person">
-            {% if site.author.name %}
-                <p class="lead" itemprop="name">
-                    {{ site.author.name }}
-                </p>
+    <div class="panel-body" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        {% if site.author.name %}
+            <p class="lead" itemprop="name">
+                {{ site.author.name }}
+            </p>
+        {% endif %}
+        <ul class="contact-list list-unstyled">
+            {% if site.author.site %}
+                <li><a href="{{ site.author.site }}" itemprop="url"><i class="fa fa-globe"></i> {{ site.author.site }}</a></li>
             {% endif %}
-            <ul class="contact-list list-unstyled">
-                {% if site.author.site %}
-                    <li><a href="{{ site.author.site }}" itemprop="url"><i class="fa fa-globe"></i> {{ site.author.site }}</a></li>
-                {% endif %}
-                {% if site.author.email %}
-                    <li><a href="mailto:{{ site.author.email }}" itemprop="email"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
-                {% endif %}
-            </ul>
-        </div>
+            {% if site.author.email %}
+                <li><a href="mailto:{{ site.author.email }}" itemprop="email"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
+            {% endif %}
+        </ul>
 
         {% if site.addthis_profile_id %}
             <!-- AddThis Follow Buttons -->

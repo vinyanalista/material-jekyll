@@ -13,9 +13,17 @@
 <meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncatewords: 55 }}{% else %}{{ site.description }}{% endif %}">
 
 {% if page.image %}
-    <meta itemprop="image" content="{{ page.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
+    {% assign image = page.image %}
 {% elsif site.image %}
-    <meta itemprop="image" content="{{ site.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
+    {% assign image = site.image %}
+{% endif %}
+
+{% if image %}
+    <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <meta itemprop="url" content="{{ image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}"/>
+        <!--<meta itemprop="width" content=""/>--><!-- TODO Image width -->
+        <!--<meta itemprop="height" content=""/>--><!-- TODO Image height -->
+    </div> 
 {% endif %}
 
 {% if site.lang %}
