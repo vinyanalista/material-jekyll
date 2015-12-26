@@ -8,6 +8,18 @@ body {
     padding-top: 70px;
 }
 
+@media (min-width: 992px) {
+    .container {
+        width: 890px;
+    }
+}
+
+@media (min-width: 1074px) {
+    .container {
+        width: 970px;
+    }
+}
+
 .panel-heading h1,
 .panel-heading h2,
 .panel-heading h3,
