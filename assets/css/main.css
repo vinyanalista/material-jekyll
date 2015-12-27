@@ -20,6 +20,12 @@ body {
     }
 }
 
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
 .panel-heading h1,
 .panel-heading h2,
 .panel-heading h3,
