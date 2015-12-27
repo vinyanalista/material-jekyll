@@ -1,2 +1,3 @@
-* text=auto
-assets/favicons/browserconfig.xml eol=crlf
+*                                   text=auto
+*.md                                text
+assets/favicons/browserconfig.xml   eol=crlf
