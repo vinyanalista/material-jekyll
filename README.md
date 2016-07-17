@@ -64,9 +64,17 @@ $ git push -u origin gh-pages
 
 ## Installation
 
-Even if you already have Jekyll installed, I recommend you to use [Bundler](http://bundler.io/) to install and manage any dependencies of this template on Ruby gems. That assures you will always use the supported versions of the gems needed to build a website based on this template.
+Even if you already have Jekyll installed, I recommend you to use [Bundler](http://bundler.io/) to install and manage all dependencies of this template on Ruby gems. That assures you will always use the supported versions of the gems needed to build a website based on this template.
 
-If you don't have Bundler installed yet, please install it. Note that Bundler in its turn requires [Ruby](https://www.ruby-lang.org/) and [RubyGems](https://rubygems.org/) to be installed, so you may need to install them first.
+Summing up [Jekyll requirements](https://jekyllrb.com/docs/installation/#requirements) and Bundler, before you can actually use this template, you must have installed on your computer:
+
+- Linux, Unix or Mac OS X (Jekyll [can be run on Windows](http://jekyll-windows.juthilo.com/), although [that is not officially supported](https://jekyllrb.com/docs/windows/))
+- [Ruby](https://www.ruby-lang.org/) (including development headers)
+- [RubyGems](https://rubygems.org/)
+- [NodeJS](https://nodejs.org/)
+- [Python 2.7](https://www.python.org/downloads/)
+
+Note that Jekyll itself is not required to be previously installed, as it is going to be installed by Bundler.
 
 Then, to make your computer ready to build a website based on this template, enter its folder and issue this command:
 
@@ -81,6 +89,8 @@ bundle install
 ```
 
 ## Configuration
+
+If you are impatient and just want to see a boilerplate Jekyll site based on this template up and running, you can skip configuration right now (default values are fine for a boilerplate site) ang go to the next step, where you will achieve what you want.
 
 Following [Jekyll configuration](https://jekyllrb.com/docs/configuration/), all of this template's configuration (including configuration of the integrated features mentioned above) is done in the [`_config.yml`](https://github.com/vinyanalista/material-jekyll/blob/master/_config.yml) file. That file is well commented and is self-explanatory.
 
@@ -105,6 +115,8 @@ Now browse to [http://localhost:4000](http://localhost:4000) and you should see 
 As you typed the argument `--host=0.0.0.0`, you can also [access your website from locally connected devices](http://stackoverflow.com/a/16608698), such as smartphones, just browsing to your computer's local IP (for example, [http://192.168.25.2:4000](http://192.168.25.2:4000)).
 
 ## Publishing your website
+
+Before actually publishing your website, please ensure that at least the `url`and `baseurl` variables in the [`_config.yml`](https://github.com/vinyanalista/material-jekyll/blob/master/_config.yml) file are correctly set, otherwise your website may not function properly online. As an example, you can see [here](https://github.com/vinyanalista/material-jekyll/commit/d3d617d1763a2ba2810fd2829d59742dfeca3d03) how they were set for the [live demo site](https://vinyanalista.github.io/material-jekyll).
 
 If you followed the above tips about GitHub pages, publishing your website is just a matter of pushing it's repository.
 
