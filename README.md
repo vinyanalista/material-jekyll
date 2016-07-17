@@ -64,9 +64,17 @@ $ git push -u origin gh-pages
 
 ## Installation
 
-Even if you already have Jekyll installed, I recommend you to use [Bundler](http://bundler.io/) to install and manage any dependencies of this template on Ruby gems. That assures you will always use the supported versions of the gems needed to build a website based on this template.
+Even if you already have Jekyll installed, I recommend you to use [Bundler](http://bundler.io/) to install and manage all dependencies of this template on Ruby gems. That assures you will always use the supported versions of the gems needed to build a website based on this template.
 
-If you don't have Bundler installed yet, please install it. Note that Bundler in its turn requires [Ruby](https://www.ruby-lang.org/) and [RubyGems](https://rubygems.org/) to be installed, so you may need to install them first.
+Summing up [Jekyll requirements](https://jekyllrb.com/docs/installation/#requirements) and Bundler, before you can actually use this template, you must have installed on your computer:
+
+- Linux, Unix or Mac OS X (Jekyll [can be run on Windows](http://jekyll-windows.juthilo.com/), although [that is not officially supported](https://jekyllrb.com/docs/windows/))
+- [Ruby](https://www.ruby-lang.org/) (including development headers)
+- [RubyGems](https://rubygems.org/)
+- [NodeJS](https://nodejs.org/)
+- [Python 2.7](https://www.python.org/downloads/)
+
+Note that Jekyll itself is not required to be previously installed, as it is going to be installed by Bundler.
 
 Then, to make your computer ready to build a website based on this template, enter its folder and issue this command:
 
