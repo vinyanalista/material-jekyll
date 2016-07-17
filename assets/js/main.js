@@ -8,6 +8,10 @@ function hide_search_input() {
     }, 200);
 }
 
+function random_number(first, last) {
+    return Math.floor((Math.random() * (last - first + 1))) + first;
+}
+
 function submit_search_form() {
     do_search = true;
     $('#search-form').submit();

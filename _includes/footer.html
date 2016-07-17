@@ -1,60 +1,101 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <p class="lead">{{ site.title }}</p>
-            </div>
-        </div>
-        <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <div class="col-sm-4">
-                <ul class="contact-list list-unstyled">
-                    {% if site.author.name %}
-                        <li itemprop="name">{{ site.author.name }}</li>
-                    {% endif %}
-                    {% if site.author.site %}
-                        <li><a href="{{ site.author.site }}" itemprop="url"><i class="fa fa-globe"></i> {{ site.author.site }}</a></li>
-                    {% endif %}
-                    {% if site.author.email %}
-                        <li><a href="mailto:{{ site.author.email }}" itemprop="email"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <ul class="social-media-list list-unstyled">
-                    {% if site.github_username %}
-                        <li>
-                            <a href="https://github.com/{{ site.github_username }}" itemprop="sameAs">
-                                <i class="fa fa-github"></i> {{ site.github_username }}
-                            </a>
-                        </li>
-                    {% endif %}
-                    {% if site.facebook.username %}
-                        <li>
-                            <a href="https://facebook.com/{{ site.facebook.username }}" itemprop="sameAs">
-                                <i class="fa fa-facebook-official"></i> {{ site.facebook.username }}
-                            </a>
-                        </li>
-                    {% endif %}
-                    {% if site.twitter_username %}
-                        <li>
-                            <a href="https://twitter.com/{{ site.twitter_username }}" itemprop="sameAs">
-                                <i class="fa fa-twitter"></i> {{ site.twitter_username }}
-                            </a>
-                        </li>
-                    {% endif %}
-                    <li>
-                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-                            <i class="fa fa-rss-square"></i> subscribe via RSS
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-5">
-                <p class="text">{{ site.description }}</p>
+            <div class="col-xs-12">
+                <p class="text-center">
+                    Copyright &copy; {{ site.time | date: '%Y' }} {% if site.author.name %}<a href='#author'>{{ site.author.name }}</a>{% else %}<a href='#about'>{{ site.title }}</a>{% endif %}. All rights reserved. Based on <a href='https://github.com/vinyanalista/material-jekyll'>Material site template for Jekyll</a>.
+                </p>
             </div>
         </div>
     </div>
 </footer>
 
 <meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncatewords: 55 }}{% else %}{{ site.description }}{% endif %}">
-<meta itemprop="image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
+
+{% if page.image %}
+    {% assign image = page.image %}
+{% elsif site.image %}
+    {% assign image = site.image %}
+{% endif %}
+
+{% if image %}
+    <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <meta itemprop="url" content="{{ image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}"/>
+        <!--<meta itemprop="width" content=""/>--><!-- TODO Image width -->
+        <!--<meta itemprop="height" content=""/>--><!-- TODO Image height -->
+    </div> 
+{% endif %}
+
+{% if site.lang %}
+    <meta itemprop="inLanguage" content="{{ site.lang }}"/>
+{% endif %}
+
+{% if site.disqus_shortname %}
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        {% if site.lang %}
+            var disqus_config = function () {
+                this.language = "{{ site.lang }}";
+            };
+        {% endif %}
+        var disqus_shortname = '{{ site.disqus_shortname }}';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- Disqus End -->
+{% endif %}
+
+{% if site.google.adsense.publisher_id %}
+    <!-- Google AdSense -->
+    {% if site.google.adsense.content_ad_unit_2 %}
+        {% include adsense.html id="content_ad_unit_2" ad_slot=site.google.adsense.content_ad_unit_2 %}
+    {% endif %}
+
+    <script type="text/javascript">
+        adsbygoogle = window.adsbygoogle || [];
+
+        $(document).ready(function(){
+            {% if site.google.adsense.content_ad_unit_2 %}
+                var $ad = $('#content_ad_unit_2').closest('.row');
+                var $posts = $('.blog-post');
+                if ($posts.length > 1) {
+                    // Post listing
+                    var post;
+                    if ($posts.length > 2) {
+                        post = random_number(2, $posts.length);
+                    } else {
+                        post = 2;
+                    }
+                    $posts.eq(post - 1).find('.blog-post-content .row').after($ad);
+                } else {
+                    // Page or post
+                    var $paragraphs = $('.blog-post-content p').filter(function() {
+                        return ($(this).closest('.no-ads-here').length == 0);
+                    });
+                    if ($paragraphs.length > 0) {
+                        var paragraph;
+                        if ($paragraphs.length > 1) {
+                            paragraph = random_number(1, $paragraphs.length);
+                        } else {
+                            paragraph = 1;
+                        }
+                        $paragraphs.eq(paragraph - 1).after($ad);
+                    } else {
+                        $ad.remove();
+                    }
+                }
+            {% endif %}
+            $('.adsbygoogle').each(function(index, element){
+                adsbygoogle.push({});
+            });
+        });
+    </script>
+    <!-- Google AdSense End -->
+{% endif %}

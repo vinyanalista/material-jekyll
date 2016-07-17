@@ -11,68 +11,128 @@ layout: default
     {% assign post_list = site.posts %}
 {% endif %}
 
-<div class="col-xs-12">    
-    {% for post in post_list %}
-        <div class="blog-post panel panel-default" itemscope itemtype="http://schema.org/BlogPosting">
-            <div class="panel-heading">
-                <h2 class="blog-post-title" itemprop="headline name">
-                    <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="url">
-                        {{ post.title }}
-                    </a>
-                </h2>
-                <p class="blog-post-meta">
-                    <span itemprop="datePublished" content="{{ post.date | date: "%Y-%m-%d" }}">
-                        {{ post.date | date: "%b %-d, %Y" }}
-                    </span>
-                    <meta itemprop="image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
-                    {% if site.author %}
-                        <div itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            {% if site.author.name %}
-                                <meta itemprop="name" content="{{ site.author.name }}">
-                            {% endif %}
-                            {% if site.author.email %}
-                                <meta itemprop="email" content="{{ site.author.email }}">
-                            {% endif %}
-                            {% if site.author.site %}
-                                <link itemprop="url" href="{{ site.author.site }}">
-                            {% endif %}
-                        </div>
-                    {% endif %}
-                </p>
-            </div><!-- .panel-heading -->
-            <div class="blog-post-content panel-body">
-                <p itemprop="description">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
-                <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-                    Read more &rsaquo;
-                </a>
-            </div><!-- .blog-post-content -->
-        </div><!-- .blog-post -->
-    {% endfor %}
 
-    {% if paginator and paginator.total_pages > 1 %}
-        <nav>
-            <ul class="pager">
-                <li class="{% if paginator.previous_page %}previous{% else %}disabled previous{% endif %}">
-                    <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Newer">
-                        &laquo;<span class="hidden-xs"> Newer</span>
+{% assign P = post_list | size %}
+{% for post in post_list %}
+    {% assign p = p | plus: 1 %}
+    <div class="blog-post panel panel-default" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="panel-heading">
+            <h2 class="blog-post-title" itemprop="headline name">
+                <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="mainEntityOfPage url">
+                    {{ post.title }}
+                </a>
+            </h2>
+            <div class="blog-post-meta row">
+                <div class='col-sm-6'>
+                    <p class="blog-post-date" itemprop="datePublished" content="{{ post.date | date: "%Y-%m-%d" }}">
+                        {{ post.date | date: "%b %-d, %Y" }}
+                    </p>
+                    <!--<meta itemprop="dateModified" content="" />--><!-- TODO Last modified date -->
+                </div>
+                <div class='col-sm-6'>
+                    {% if site.addthis_profile_id %}
+                        <div class='blog-post-share'>
+                            <!-- AddThis Sharing Buttons -->
+                            <div class="addthis_toolbox addthis_default_style" addthis:url="{{ post.url | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" addthis:title="{{ post.title }}" addthis:description="{{ post.excerpt | strip_html | strip_html | truncatewords: 55 }}">
+                                <a class="addthis_button_facebook"></a>
+                                <a class="addthis_button_twitter"{% if site.twitter_username %} data-via="{{ site.twitter_username }}"{% endif %}></a>
+                                <a class="addthis_button_google_plusone_share"></a>
+                                <a class="addthis_button_favorites"></a>
+                                <a class="addthis_button_compact"></a>
+                                <a class="addthis_counter addthis_bubble_style"></a>
+                            </div>
+                            <!-- AddThis Sharing Buttons End -->
+                        </div><!-- .blog-post-share -->
+                    {% endif %}
+                </div><!-- .col-sm-6 -->
+                {% if site.author %}
+                    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        {% if site.author.name %}
+                            <meta itemprop="name" content="{{ site.author.name }}">
+                        {% endif %}
+                        {% if site.author.email %}
+                            <meta itemprop="email" content="{{ site.author.email }}">
+                        {% endif %}
+                        {% if site.author.site %}
+                            <link itemprop="url" href="{{ site.author.site }}">
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {% if site.lang %}
+                    <meta itemprop="inLanguage" content="{{ site.lang }}"/>
+                {% endif %}
+                <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                    <meta itemprop="name" content="{{ site.title }}" />
+                    <meta itemprop="url" content="{{ site.baseurl | prepend: site.url }}" />
+                    <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+                        <meta itemprop="url" content="{{ site.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" />
+                        <!--<meta itemprop="width" content=""/>--><!-- TODO Image width -->
+                        <!--<meta itemprop="height" content=""/>--><!-- TODO Image height -->
+                    </div>
+                </div>
+            </div><!-- .blog-post-meta -->
+        </div><!-- .panel-heading -->
+        <div class="blog-post-content panel-body">
+            <div class="row">
+                {% if post.image or site.image %}
+                <div class='col-sm-4' itemprop='image' itemscope itemtype='http://schema.org/ImageObject'>
+                    <p class='text-center'>
+                        <a href='{{ post.url | prepend: site.baseurl | replace: '//', '/' }}'>
+                            {% if post.image %}
+                                <img src='{{ post.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}' class='img-responsive img-thumbnail' itemprop="url">
+                            {% elsif site.image %}
+                                <img src='{{ site.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}' class='img-responsive img-thumbnail' itemprop="url">
+                            {% endif %}
+                        </a>
+                    </p>
+                    <!--<meta itemprop="width" content=""/>--><!-- TODO Image width -->
+                    <!--<meta itemprop="height" content=""/>--><!-- TODO Image height -->
+                </div>
+                <div class="col-sm-8">
+                {% else %}
+                <div class="col-xs-12">
+                {% endif %}
+                    <p itemprop="description">{{ post.excerpt | strip_html | strip_newlines | truncatewords: 55 }}</p>
+                    {% if site.disqus_shortname %}
+                        <a class='btn btn-primary pull-left' href="{{ '#disqus_thread' | prepend: post.url | prepend: site.baseurl | replace: '//', '/' }}">Comments</a>
+                    {% endif %}
+                    <a class='btn btn-primary pull-right' href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                        Read more &rsaquo;
                     </a>
-                </li>
-                <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}>
-                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" aria-label="Next">
-                        &lsaquo;<span class="hidden-xs"> Next</span>
-                    </a>
-                </li>
-                <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}>
-                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
-                        <span class="hidden-xs">Previous </span>&rsaquo;
-                    </a>
-                </li>
-                <li class="{% if paginator.next_page %}next{% else %}disabled next{% endif %}">
-                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}" aria-label="Older">
-                        <span class="hidden-xs">Older </span>&raquo;
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    {% endif %}
-</div><!-- .col-xs-12 -->
+                </div>
+            </div><!-- .row -->
+
+            {% if p == 1 and site.google.adsense.content_ad_unit_1 %}
+                {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
+            {% endif %}
+
+        </div><!-- .blog-post-content -->
+    </div><!-- .blog-post -->
+{% endfor %}
+
+{% if paginator and paginator.total_pages > 1 %}
+    <nav>
+        <ul class="pager">
+            <li class="{% if paginator.previous_page %}previous{% else %}disabled previous{% endif %}">
+                <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Newer">
+                    &laquo;<span class="hidden-xs"> Newer</span>
+                </a>
+            </li>
+            <li{% if paginator.previous_page %}{% else %} class="disabled"{% endif %}>
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" aria-label="Next">
+                    &lsaquo;<span class="hidden-xs"> Next</span>
+                </a>
+            </li>
+            <li{% if paginator.next_page %}{% else %} class="disabled"{% endif %}>
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous">
+                    <span class="hidden-xs">Previous </span>&rsaquo;
+                </a>
+            </li>
+            <li class="{% if paginator.next_page %}next{% else %}disabled next{% endif %}">
+                <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}" aria-label="Older">
+                    <span class="hidden-xs">Older </span>&raquo;
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endif %}

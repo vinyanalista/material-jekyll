@@ -12,11 +12,14 @@
         </script>
     {% endif %}
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="author" content="{{ site.author.name }}">
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+    <!-- OpenSearch -->
+    <link rel="search" type="application/opensearchdescription+xml" title="Search {{ site.title }}" href="{{ '/opensearch.xml' | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" />
 
     <!-- Open Graph -->
     {% if page.is_post %}
@@ -35,7 +38,11 @@
     {% if site.author.email %}
         <meta property="og:email" content="{{ site.author.email }}" />
     {% endif %}
-    <meta property="og:image" content="{{ "/assets/favicons/favicon-194x194.png?v=1" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" />
+    {% if page.image %}
+        <meta property="og:image" content="{{ page.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" />
+    {% elsif site.image %}
+        <meta property="og:image" content="{{ site.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" />
+    {% endif %}
     <meta property="og:site_name" content="{{ site.title }}" />
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
     <meta property="og:type" content="{% if page.is_post %}{{ "article" }}{% else %}{{ "website" }}{% endif %}" />
@@ -70,8 +77,8 @@
     <meta name="theme-color" content="#009688">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
@@ -81,13 +88,13 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
@@ -108,5 +115,28 @@
 
         </script>
         <!-- End Google Analytics -->
+    {% endif %}
+
+    {% if site.google.adsense.publisher_id %}
+        <!-- Google AdSense -->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {% endif %}
+
+    {% if site.addthis_profile_id %}
+        <!-- AddThis -->
+        <script async src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ site.addthis_profile_id }}"></script>
+        <script type="text/javascript">
+            var addthis_config = {
+                data_track_clickback: true,
+                data_track_addressbar: true,
+                ui_language: '{{ site.lang }}'
+            };
+            var addthis_share = {
+                url: '{{ page.url | prepend: site.baseurl | replace: "//", "/"" | prepend: site.url }}',
+                title: document.title,
+                description: '{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncatewords: 55 }}{% else %}{{ site.description }}{% endif %}'
+            };
+        </script>
+        <!-- End AddThis -->
     {% endif %}
 </head>

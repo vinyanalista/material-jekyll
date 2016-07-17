@@ -35,6 +35,12 @@ excerpt_separator: <!--more-->
 # For more info on post excerpts, please refer to
 # http://jekyllrb.com/docs/posts/#post-excerpts
 
+# Exclude
+# Exclude directories and/or files from the conversion. These exclusions are
+# relative to the site's source directory and cannot be outside the source
+# directory.
+exclude: ['Gemfile', 'Gemfile.lock', 'LICENSE', 'README.md']
+
 # Markdown renderer
 # Sets the Markdown renderer to be used by Jekyll (kramdown, redcarpet or your
 # own)
@@ -44,6 +50,14 @@ excerpt_separator: <!--more-->
 # For more info on how to use and configure Markdown renderers, as well as how
 # to create custom renderers, please refer to
 # http://jekyllrb.com/docs/configuration/#markdown-options
+
+# Permalink
+# Set the site’s URLs style
+# Default: date
+permalink: pretty
+
+# For more info on permalinks, please refer to
+# http://jekyllrb.com/docs/permalinks/
 
 ######################
 # Google integration #
@@ -61,6 +75,50 @@ google:
     # For more info on Google Analytic, please refer to
     # https://support.google.com/analytics/
 
+    # Google Custom Search Engine ID
+    # Allows visitors to search the website without leaving it, using a custom
+    # search engine powered by Google.
+    # Default: not set (instead of a CSE, Google is used to handle searching)
+    # cse_id: 123456789012345678901:abcdefghijk
+
+    # If you do not know your CSE ID, take a look at
+    # https://support.google.com/customsearch/answer/2649143
+
+    # For more info on Google Custom Search Engine, please refer to
+    # https://support.google.com/customsearch/
+
+    # Google AdSense settings
+    # Allows to earn money by showing ads on the website.
+    adsense:
+        # Google AdSense publisher ID
+        # Your publisher ID is the unique identifier for your AdSense account.
+        # Default: not set (Google AdSense is not used to show ads)
+        # publisher_id: ca-pub-1234567890123456
+
+        # If you do not know your publisher ID, take a look at
+        # https://support.google.com/adsense/answer/105516
+
+        # Ad unit ID for the ad displayed at the top of the page content, bellow
+        # the title, if in a page or post, or after the first post, if in a post
+        # listing
+        # Default: not set (no ad is displayed at the top)
+        # content_ad_unit_1: 1234567890
+
+        # Ad unit ID for the ad displayed inside the page content, randomly
+        # placed between paragraphs, if in a page or post, or between posts, if
+        # in a post listing
+        # Default: not set (no ad is displayed in the page content)
+        # content_ad_unit_2: 0987654321
+
+        # Ad unit ID for the ad displayed in the sidebar
+        # Default: not set (no ad is displayed in the sidebar)
+        # sidebar_ad_unit: 1231231231
+
+        # Note: use only responsive ad units
+
+    # For more info on Google AdSense, please refer to
+    # https://support.google.com/adsense/
+
 ##############
 # Pagination #
 ##############
@@ -75,6 +133,16 @@ google:
 
 # For more info on pagination, please refer to
 # http://jekyllrb.com/docs/pagination/
+
+###########
+# Plugins #
+###########
+
+gems:
+    # Jekyll Sitemap Generator Plugin
+    # https://github.com/jekyll/jekyll-sitemap
+    # Plugin to silently generate a sitemaps.org compliant sitemap for your site
+    - jekyll-sitemap
 
 ##############
 # Publishing #
@@ -116,6 +184,12 @@ description: > # this means to ignore newlines until the text ends
     line in _config.yml. It will appear in your document head meta (for
     Google search results) and in your feed.xml site description.
 
+# Default site image
+# Image used as a default thumbnail for pages and posts which do not have an
+# thumbnail explicitly set by the front matter image variable.
+# Default: not set (no image is displayed if an image is not explicitly set)
+image: "/assets/favicons/favicon-194x194.png"
+
 # Site language
 # A language tag following the language tag syntax (IETF's BCP 47). This is
 # meant to assist search engines and browsers.
@@ -125,9 +199,48 @@ lang: en
 # For more info on language tags, please refer to
 # http://www.w3.org/International/articles/language-tags/
 
+# Navigation bar
+# Allows to customize the links shown on the navigation bar
+# Default: not set (links to all pages are shown)
+# navigation:
+#     -
+#         title: "Link one"
+#         url: "/link/one/"
+#     -
+#         title: "Link two"
+#         url: "/link/two/"
+
 ###################
 # Social networks #
 ###################
+
+# AddThis profile ID
+# AddThis is a content sharing platform. It can be used to better integrate the
+# website with social networks. An AddThis profile contains configuration options
+# and analytics data for a website.
+# Default: not set (AddThis is not used to handle social networks integration)
+# addthis_profile_id: "ra-example123456789"
+
+# If you do not know your AddThis profile ID, you can find it at
+# https://www.addthis.com/settings/publisher
+
+# For more info on AddThis, please refer to
+# http://support.addthis.com/
+
+# Disqus shortname
+# Disqus is a blog comment hosting service for websites. A Disqus shortname is
+# the unique identifier assigned to a Disqus site. All the comments posted to a
+# site are referenced with the shortname. The shortname tells Disqus to load
+# only your site's comments, as well as the settings specified in your Disqus
+# admin.
+# Default: not set (do not use Disqus to handle comments)
+# disqus_shortname: "my_disqus_shortname"
+
+# If you do not know your Disqus shortname, take a look at
+# https://help.disqus.com/customer/portal/articles/466208
+
+# For more info on Disqus, please refer to
+# https://help.disqus.com/
 
 facebook:
     # Facebook Application ID
@@ -155,15 +268,46 @@ facebook:
     # Default: not set (Facebook URL is not displayed)
     # username: "username"
 
+# Foursquare username
+# Example: username, if your Foursquare URL is https://foursquare.com/username
+# Default: not set (Foursquare URL is not displayed)
+# foursquare_username: "username"
+
 # GitHub username
 # Example: jekyll, if your GitHub URL is https://github.com/jekyll
 # Default: not set (GitHub URL is not displayed)
-github_username:  jekyll
+github_username: "jekyll"
+
+# Google Plus user ID
+# Example: 123456789098765432123, if your Google Plus URL is
+# https://plus.google.com/123456789098765432123
+# Default: not set (Google Plus URL is not displayed)
+# google_plus_user_id: 123456789098765432123
+
+# LinkedIn username
+# Example: username, if your LinkedIn public profile URL is
+# https://www.linkedin.com/in/username
+# Default: not set (LinkedIn public profile URL is not displayed)
+# linkedin_username: "username"
 
 # Twitter username
 # Example: jekyllrb, if your Twitter URL is https://twitter.com/jekyllrb
 # Default: not set (Twitter URL is not displayed)
-twitter_username: jekyllrb
+twitter_username: "jekyllrb"
+
+youtube:
+    # What kind of YouTube profile you have (it can be "user" or "channel")
+    # Default: not set (YouTube URL is not displayed)
+    # profile: "user"
+
+    # YouTube user or channel name
+    # Examples:
+    # username, if your YouTube personal profile is at
+    # https://www.youtube.com/user/username or
+    # channelname, if your YouTube channel is at
+    # https://www.youtube.com/channel/channelname
+    # Default: not set (YouTube URL is not displayed)
+    # name: "username"
 
 #####################
 # YAML Front Matter #
