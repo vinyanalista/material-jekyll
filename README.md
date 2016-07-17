@@ -90,6 +90,8 @@ bundle install
 
 ## Configuration
 
+If you are impatient and just want to see a boilerplate Jekyll site based on this template up and running, you can skip configuration right now (default values are fine for a boilerplate site) ang go to the next step, where you will achieve what you want.
+
 Following [Jekyll configuration](https://jekyllrb.com/docs/configuration/), all of this template's configuration (including configuration of the integrated features mentioned above) is done in the [`_config.yml`](https://github.com/vinyanalista/material-jekyll/blob/master/_config.yml) file. That file is well commented and is self-explanatory.
 
 ## Previewing your website locally
@@ -113,6 +115,8 @@ Now browse to [http://localhost:4000](http://localhost:4000) and you should see 
 As you typed the argument `--host=0.0.0.0`, you can also [access your website from locally connected devices](http://stackoverflow.com/a/16608698), such as smartphones, just browsing to your computer's local IP (for example, [http://192.168.25.2:4000](http://192.168.25.2:4000)).
 
 ## Publishing your website
+
+Before actually publishing your website, please ensure that at least the `url`and `baseurl` variables in the [`_config.yml`](https://github.com/vinyanalista/material-jekyll/blob/master/_config.yml) file are correctly set, otherwise your website may not function properly online. As an example, you can see [here](https://github.com/vinyanalista/material-jekyll/commit/d3d617d1763a2ba2810fd2829d59742dfeca3d03) how they were set for the [live demo site](https://vinyanalista.github.io/material-jekyll).
 
 If you followed the above tips about GitHub pages, publishing your website is just a matter of pushing it's repository.
 
