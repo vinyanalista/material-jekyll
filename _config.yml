@@ -188,7 +188,7 @@ description: > # this means to ignore newlines until the text ends
 # Image used as a default thumbnail for pages and posts which do not have an
 # thumbnail explicitly set by the front matter image variable.
 # Default: not set (no image is displayed if an image is not explicitly set)
-image: "/assets/favicons/favicon-194x194.png"
+image: "/assets/favicons/android-chrome-192x192.png"
 
 # Site language
 # A language tag following the language tag syntax (IETF's BCP 47). This is

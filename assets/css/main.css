@@ -26,6 +26,10 @@ body {
     }
 }
 
+body, h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
 .panel-heading h1,
 .panel-heading h2,
 .panel-heading h3,
@@ -121,51 +125,88 @@ body {
     padding: 0px;
 }
 
-/* Search form */
-
-#search-button {
-    color: white;
-    cursor: pointer;
-}
-
-#search-button:hover {
-    text-decoration: none;
-}
-
-#search-form {
-    background: #009688;
-    box-shadow: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+/* Navbar with collapsible search bar */
+/* Search based on: https://bootsnipp.com/snippets/a6aV0 */
 
 @media (max-width: 767px) {
-    #search-form {
-        border: none;
-        outline: none !important;
-        padding-bottom: 0px;
-        right: 15px;
-        top: -10px;
+    .navbar-header, .navbar-brand {
+        float: left;
+    }
+
+    #navbar {
+        clear: both;
     }
 }
 
-@media (min-width: 768px) {
-    #navbar {
-        margin-right: 60px;
+#search-button {
+    color: rgba(255,255,255,0.84);
+    cursor: pointer;
+    margin-left: 15px;
+    margin-right: -15px;
+    padding: 15px;
+}
+
+@media (min-width: 1200px) {
+    #search-button {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
+}
+
+#search-bar {
+    background-color: #F5F5F5;
+    position: absolute;
+
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+
+    -moz-transform-origin: 0 0 0;
+    -ms-transform-origin: 0 0 0;
+    -o-transform-origin: 0 0 0;
+    -webkit-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    visibility: hidden;
+    width: 100%;
+}
+
+#search-bar.open {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    visibility: visible;
+}
+
+#search-bar .form-group {
+    margin: 0;
+    padding: 0;
+}
+
+#search-bar .input-group-btn {
+    padding: 0;
+}
+
+#search-bar .input-group-btn > .btn {
+    border-radius: 0px;
+    margin: 0;
+    padding: 15px;
 }
 
 #search-input {
-    display: none;
-    opacity: 0;
-    width: 0;
-}
-
-#search-input:focus {
-    -webkit-animation: none;
-    animation: none;
-    background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#d2d2d2, #d2d2d2);
+    font-size: 18px;
+    height: 50px;
+    margin: 0;
 }
 
 /* Blog posts */
