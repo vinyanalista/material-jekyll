@@ -5,7 +5,7 @@ This is a site template for [Jekyll](http://jekyllrb.com) which lets you use the
 
 **Live demo:** https://vinyanalista.github.io/material-jekyll
 
-It is built on top of the [Jekyll's default site template](https://github.com/jekyll/jekyll/tree/v2.5.3/lib/site_template) and the following excelent libraries:
+It is built on top of the [Jekyll's default site template](https://github.com/jekyll/jekyll/tree/v2.5.3/lib/site_template) and the following excellent libraries:
 
 - [jQuery](http://jquery.com/) (MIT License)
 - [Bootstrap](http://getbootstrap.com/) (MIT License)
