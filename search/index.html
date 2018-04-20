@@ -15,8 +15,14 @@ sitemap: false
     </header>
 
     <article class="blog-post-content panel-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-        {% if !site.google.cse_id and site.google.adsense.content_ad_unit_1 %}
-            {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
+        [//]: # (Comments in Markdown: https://stackoverflow.com/a/20885980/1657502)
+        [//]: # (TODO Review all if's that check for (un)defined variables)
+        [//]: # (https://www.mattcrampton.com/blog/checking_if_a_variable_is_set_in_jekyll/)
+        [//]: # (https://github.com/Shopify/liquid/issues/223)
+        {% if site.google.cse_id == nil or site.google.cse_id == empty %}
+            {% if site.google.adsense.content_ad_unit_1 and site.google.adsense.content_ad_unit_1 != "" and site.google.adsense.content_ad_unit_1 != nil %}
+                {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
+            {% endif %}
         {% endif %}
 
         {% if site.google.cse_id %}
@@ -42,6 +48,6 @@ sitemap: false
                     $('#search-button').click();
                 });
             </script>
-        {% endif %}       
+        {% endif %}
     </article>
 </div><!-- .blog-post -->

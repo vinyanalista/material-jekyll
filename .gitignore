@@ -1,13 +1,20 @@
-# Created by https://www.gitignore.io/api/kate,linux,jekyll,ruby,windows
+# Created by https://www.gitignore.io/api/jekyll,kate,linux,ruby,windows
+
+### Jekyll ###
+_site/
+.sass-cache/
+.jekyll-metadata
 
 ### Kate ###
 # Swap Files #
 .*.kate-swp
 .swp.*
 
-
 ### Linux ###
 *~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
 
 # KDE directory preferences
 .directory
@@ -15,12 +22,8 @@
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
-
-### Jekyll ###
-_site/
-.sass-cache/
-.jekyll-metadata
-
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
 ### Ruby ###
 *.gem
@@ -35,10 +38,24 @@ _site/
 /test/version_tmp/
 /tmp/
 
+# Used by dotenv library to load environment variables.
+# .env
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
 build/
+*.bridgesupport
+build-iPhoneOS/
+build-iPhoneSimulator/
+
+## Specific to RubyMotion (use of CocoaPods):
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# vendor/Pods/
 
 ## Documentation cache and generated files:
 /.yardoc/
@@ -46,7 +63,7 @@ build/
 /doc/
 /rdoc/
 
-## Environment normalisation:
+## Environment normalization:
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
@@ -60,11 +77,11 @@ Gemfile.lock
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-
 ### Windows ###
-# Windows image file caches
+# Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
+ehthumbs_vista.db
 
 # Folder config file
 Desktop.ini
@@ -81,3 +98,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+
+# End of https://www.gitignore.io/api/jekyll,kate,linux,ruby,windows
