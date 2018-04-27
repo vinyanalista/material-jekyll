@@ -15,8 +15,8 @@ layout: default
 {% assign P = post_list | size %}
 {% for post in post_list %}
     {% assign p = p | plus: 1 %}
-    <div class="blog-post panel panel-default" itemscope itemtype="http://schema.org/BlogPosting">
-        <div class="panel-heading">
+    <div class="blog-post card" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="card-header">
             <h2 class="blog-post-title" itemprop="headline name">
                 <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="mainEntityOfPage url">
                     {{ post.title }}
@@ -71,8 +71,8 @@ layout: default
                     </div>
                 </div>
             </div><!-- .blog-post-meta -->
-        </div><!-- .panel-heading -->
-        <div class="blog-post-content panel-body">
+        </div><!-- .card-header -->
+        <div class="blog-post-content card-body">
             <div class="row">
                 {% if post.image or site.image %}
                 <div class='col-sm-4' itemprop='image' itemscope itemtype='http://schema.org/ImageObject'>
