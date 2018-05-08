@@ -69,6 +69,44 @@ body {
     color: hsla(0,0%,100%,.75);
 }
 
+/* Pagination */
+
+.pagination {
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .pagination {
+        margin-bottom: 60px;
+    }
+}
+
+.pagination > li {
+    display: inline;
+}
+
+.pagination .page-item.latest {
+    float: left;
+}
+
+.pagination .page-item.earliest {
+    float: right;
+}
+
+.pagination .page-item > .page-link {
+    display: inline-block !important;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.pagination .disabled.page-item {
+    color: #777;
+    cursor: not-allowed;
+}
+
 /* Footer */
 
 .footer {

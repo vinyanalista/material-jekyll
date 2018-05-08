@@ -173,6 +173,10 @@ plugins:
     # Plugin to generate an Atom (RSS-like) feed of your Jekyll posts
     - jekyll-feed
 
+    # Default pagination generator for Jekyll
+    # https://github.com/jekyll/jekyll-paginate
+    - jekyll-paginate
+
     # Jekyll Sitemap Generator Plugin
     # https://github.com/jekyll/jekyll-sitemap
     # Plugin to silently generate a sitemaps.org compliant sitemap for your site
