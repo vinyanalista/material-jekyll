@@ -3,12 +3,12 @@
     <div class="container">
         <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
-        <button type="button" class="navbar-toggler collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav m-auto">
                 {% if site.navigation %}
                     {% for link in site.navigation %}
                         <li class="nav-item">
@@ -25,13 +25,19 @@
                     {% endfor %}
                 {% endif %}
             </ul>
-            <form action="{% if site.google.cse_id %}{{ "/search/" | prepend: site.baseurl }}{% else %}https://www.google.com/search{% endif %}" class="form-inline mt-2 mt-md-0" method="get" role="search">
+            <form action="{% if site.google.cse_id %}{{ "/search/" | prepend: site.baseurl }}{% else %}https://www.google.com/search{% endif %}" class="form-inline" id="search-form" method="get" role="search">
                 {% if site.google.cse_id %}
                 {% else %}
                     <input type="hidden" name="as_sitesearch" value="{{ site.baseurl | prepend: site.url }}" />
                 {% endif %}
-                <input class="form-control mr-sm-2" name="q" placeholder="Search" type="text"  aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <div class="input-group">
+                    <input class="form-control" id="search-field" name="q" placeholder="Search" type="text"  aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary btn-number" id="search-button" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </form>
         </div><!--#navbar-->
     </div><!--.container-->

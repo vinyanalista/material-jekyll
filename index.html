@@ -15,7 +15,7 @@ layout: default
 {% assign P = post_list | size %}
 {% for post in post_list %}
     {% assign p = p | plus: 1 %}
-    <div class="blog-post card" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="blog-post card mb-3" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="card-header">
             <h2 class="blog-post-title" itemprop="headline name">
                 <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="mainEntityOfPage url">
