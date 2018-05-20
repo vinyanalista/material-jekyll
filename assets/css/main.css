@@ -10,33 +10,14 @@ body {
 
 @media (min-width: 992px) {
     .container {
-        width: 890px;
-    }
-}
-
-@media (min-width: 1074px) {
-    .container {
-        width: 970px;
+        max-width: 970px;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
-        width: 1170px;
+        max-width: 1170px;
     }
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
-}
-
-.panel-heading h1,
-.panel-heading h2,
-.panel-heading h3,
-.panel-heading h4,
-.panel-heading h5,
-.panel-heading h6 {
-    margin-top: 0;
 }
 
 .gap {
@@ -47,18 +28,83 @@ body, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 }
 
-.panel-default > .panel-heading {
-    color: #212121;
+.card > .card-header {
     background-color: #F5F5F5;
 }
 
-/* Brand */
+/* Header */
 
 @media (min-width: 350px) {
     a.navbar-brand {
         background: url(../favicons/favicon-32x32.png) 15px no-repeat;
         padding-left: 60px !important;
     }
+}
+
+@media (max-width: 767px) {
+    .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #search-form .bmd-form-group, #search-form .input-group {
+        width: 100%;
+    }
+}
+
+#search-field {
+    background-image: linear-gradient(0deg,#009688 2px,rgba(0,150,136,0) 0),linear-gradient(0deg,hsla(0,0%,100%,.5) 1px,transparent 0);
+}
+
+#search-form .is-focused .form-control {
+    background-image: linear-gradient(0deg,hsla(0,0%,100%,.75) 2px,rgba(63,81,181,0) 0),linear-gradient(0deg,hsla(0,0%,100%,.5) 1px,transparent 0);
+}
+
+#search-button {
+    color: hsla(0,0%,100%,.5);
+    padding: .5rem;
+}
+
+#search-field, #search-button:focus, #search-button:hover {
+    color: hsla(0,0%,100%,.75);
+}
+
+/* Pagination */
+
+.pagination {
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .pagination {
+        margin-bottom: 60px;
+    }
+}
+
+.pagination > li {
+    display: inline;
+}
+
+.pagination .page-item.latest {
+    float: left;
+}
+
+.pagination .page-item.earliest {
+    float: right;
+}
+
+.pagination .page-item > .page-link {
+    display: inline-block !important;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.pagination .disabled.page-item {
+    color: #777;
+    cursor: not-allowed;
 }
 
 /* Footer */
@@ -120,95 +166,6 @@ body, h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.contact-list, .social-media-list {
-    margin-left: 0px;
-    padding: 0px;
-}
-
-/* Navbar with collapsible search bar */
-/* Search based on: https://bootsnipp.com/snippets/a6aV0 */
-
-@media (max-width: 767px) {
-    .navbar-header, .navbar-brand {
-        float: left;
-    }
-
-    #navbar {
-        clear: both;
-    }
-}
-
-#search-button {
-    color: rgba(255,255,255,0.84);
-    cursor: pointer;
-    margin-left: 15px;
-    margin-right: -15px;
-    padding: 15px;
-}
-
-@media (min-width: 1200px) {
-    #search-button {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-}
-
-#search-bar {
-    background-color: #F5F5F5;
-    position: absolute;
-
-    -moz-transform: rotateX(-90deg);
-    -ms-transform: rotateX(-90deg);
-    -o-transform: rotateX(-90deg);
-    -webkit-transform: rotateX(-90deg);
-    transform: rotateX(-90deg);
-
-    -moz-transform-origin: 0 0 0;
-    -ms-transform-origin: 0 0 0;
-    -o-transform-origin: 0 0 0;
-    -webkit-transform-origin: 0 0 0;
-    transform-origin: 0 0 0;
-
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-
-    visibility: hidden;
-    width: 100%;
-}
-
-#search-bar.open {
-    -webkit-transform: rotateX(0deg);
-    -moz-transform: rotateX(0deg);
-    -o-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    visibility: visible;
-}
-
-#search-bar .form-group {
-    margin: 0;
-    padding: 0;
-}
-
-#search-bar .input-group-btn {
-    padding: 0;
-}
-
-#search-bar .input-group-btn > .btn {
-    border-radius: 0px;
-    margin: 0;
-    padding: 15px;
-}
-
-#search-input {
-    font-size: 18px;
-    height: 50px;
-    margin: 0;
-}
-
 /* Blog posts */
 
 .blog-post-link,
@@ -247,7 +204,7 @@ body, h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* http://getbootstrap.com/getting-started/#third-parties */
+/* https://getbootstrap.com/docs/4.0/getting-started/introduction/#box-sizing */
 
 .reset-box-sizing,
 .reset-box-sizing *,

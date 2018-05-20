@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="blog-post panel panel-default">
-    <header class="panel-heading">
+<div class="blog-post card mb-3">
+    <header class="card-header">
         <h1 class="blog-post-title" itemprop="headline name">
             <a class="blog-post-link" href="{{ page.url | prepend: site.baseurl | replace: '//', '/' }}" itemprop="mainEntityOfPage url">
                 {{ page.title }}
@@ -35,15 +35,13 @@ layout: default
         </div><!-- .blog-post-meta -->
     </header>
 
-    <article class="blog-post-content panel-body">
+    <article class="blog-post-content card-body">
         {% if site.google.adsense.content_ad_unit_1 %}
             {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
         {% endif %}
 
-        <div class="row" itemprop="articleBody mainEntity">
-            <div class="col-xs-12">
-                {{ content }}
-            </div>
+        <div itemprop="articleBody mainEntity">
+            {{ content }}
         </div>
 
         {% if site.addthis_profile_id %}

@@ -8,4 +8,5 @@ command -v bundle >/dev/null 2>&1 || {
     exit 1;
 }
 
-bundle install
+# https://stackoverflow.com/a/49719722/1657502
+bundle install --path vendor/bundle

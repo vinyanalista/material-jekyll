@@ -1,8 +1,8 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="card mb-3">
+    <div class="card-header">
         <h3><a name="about"></a>About</h3>
     </div>
-    <div class="panel-body" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <div class="card-body" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <p class='text-center' itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
             <a href='{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}' itemprop='url'>
                 <img src='{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}' class='img-responsive img-thumbnail'>
@@ -18,14 +18,14 @@
         <p class="text" itemprop="description">
             {{ site.description }}
         </p>
-    </div><!-- .panel-body -->
-</div><!-- .panel -->
+    </div><!-- .card-body -->
+</div><!-- .card -->
 
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="card mb-3">
+    <div class="card-header">
         <h3><a name="author"></a>Author</h3>
     </div>
-    <div class="panel-body" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="card-body" itemprop="author" itemscope itemtype="http://schema.org/Person">
         {% if site.author.name %}
             <p class="lead" itemprop="name">
                 {{ site.author.name }}
@@ -33,10 +33,10 @@
         {% endif %}
         <ul class="contact-list list-unstyled">
             {% if site.author.site %}
-                <li><a href="{{ site.author.site }}" itemprop="url"><i class="fa fa-globe"></i> {{ site.author.site }}</a></li>
+                <li><a href="{{ site.author.site }}" itemprop="url"><i class="fas fa-globe"></i> {{ site.author.site }}</a></li>
             {% endif %}
             {% if site.author.email %}
-                <li><a href="mailto:{{ site.author.email }}" itemprop="email"><i class="fa fa-envelope"></i> {{ site.author.email }}</a></li>
+                <li><a href="mailto:{{ site.author.email }}" itemprop="email"><i class="fas fa-envelope"></i> {{ site.author.email }}</a></li>
             {% endif %}
         </ul>
 
@@ -72,65 +72,65 @@
                 {% if site.facebook.username %}
                     <li>
                         <a href="https://facebook.com/{{ site.facebook.username }}" itemprop="sameAs">
-                            <i class="fa fa-facebook-official"></i> {{ site.facebook.username }}
+                            <i class="fab fa-facebook"></i> {{ site.facebook.username }}
                         </a>
                     </li>
                 {% endif %}
                 {% if site.twitter_username %}
                     <li>
                         <a href="https://twitter.com/{{ site.twitter_username }}" itemprop="sameAs">
-                            <i class="fa fa-twitter"></i> {{ site.twitter_username }}
+                            <i class="fab fa-twitter"></i> {{ site.twitter_username }}
                         </a>
                     </li>
                 {% endif %}
                 {% if site.linkedin_username %}
                     <li>
                         <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" itemprop="sameAs">
-                            <i class="fa fa-linkedin-square"></i> {{ site.linkedin_username }}
+                            <i class="fab fa-linkedin"></i> {{ site.linkedin_username }}
                         </a>
                     </li>
                 {% endif %}
                 {% if site.google.user_id %}
                     <li>
                         <a href="https://plus.google.com/{{ site.google.user_id }}" itemprop="sameAs">
-                            <i class="fa fa-google-plus-square"></i> {{ site.google.user_id }}
+                            <i class="fab fa-google-plus"></i> {{ site.google.user_id }}
                         </a>
                     </li>
                 {% endif %}
                 {% if site.youtube.profile and site.youtube.name %}
                     <li>
                         <a href="https://youtube.com/{{ site.youtube.profile }}/{{ site.youtube.username }}" itemprop="sameAs">
-                            <i class="fa fa-youtube-play"></i> {{ site.youtube.name }}
+                            <i class="fab fa-youtube"></i> {{ site.youtube.name }}
                         </a>
                     </li>
                 {% endif %}
                 {% if site.foursquare_username %}
                     <li>
                         <a href="https://foursquare.com/{{ site.foursquare_username }}" itemprop="sameAs">
-                            <i class="fa fa-foursquare"></i> {{ site.foursquare_username }}
+                            <i class="fab fa-foursquare"></i> {{ site.foursquare_username }}
                         </a>
                     </li>
                 {% endif %}
                 {% if site.github_username %}
                     <li>
                         <a href="https://github.com/{{ site.github_username }}" itemprop="sameAs">
-                            <i class="fa fa-github"></i> {{ site.github_username }}
+                            <i class="fab fa-github"></i> {{ site.github_username }}
                         </a>
                     </li>
                 {% endif %}
                 <li>
                     <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-                        <i class="fa fa-rss-square"></i> subscribe via RSS
+                        <i class="fas fa-rss"></i> subscribe via RSS
                     </a>
                 </li>
             </ul>
         {% endif %}
-    </div><!-- .panel-body -->
-</div><!-- .panel -->
+    </div><!-- .card-body -->
+</div><!-- .card -->
 
 {% if site.google.adsense.sidebar_ad_unit %}
-    <div class="panel panel-default">
-        <div class="panel-body">
+    <div class="card mb-3">
+        <div class="card-body">
             {% include adsense.html id="sidebar_ad_unit" ad_slot=site.google.adsense.sidebar_ad_unit %}
         </div><!-- .col-xs-12 -->
     </div><!-- .row -->

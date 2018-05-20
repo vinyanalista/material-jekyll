@@ -1,3 +1,20 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server
+# process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
 ###############
 # Author info #
 ###############
@@ -39,7 +56,19 @@ excerpt_separator: <!--more-->
 # Exclude directories and/or files from the conversion. These exclusions are
 # relative to the site's source directory and cannot be outside the source
 # directory.
-exclude: ['Gemfile', 'Gemfile.lock', 'LICENSE', 'README.md']
+#
+# The following items will not be processed, by default.
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - node_modules
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/
+# Create a custom list to override the default setting.
+    - LICENSE
+    - README.md
 
 # Markdown renderer
 # Sets the Markdown renderer to be used by Jekyll (kramdown, redcarpet or your
@@ -138,7 +167,16 @@ google:
 # Plugins #
 ###########
 
-gems:
+plugins:
+    # Jekyll Feed plugin
+    # https://github.com/jekyll/jekyll-feed
+    # Plugin to generate an Atom (RSS-like) feed of your Jekyll posts
+    - jekyll-feed
+
+    # Default pagination generator for Jekyll
+    # https://github.com/jekyll/jekyll-paginate
+    - jekyll-paginate
+
     # Jekyll Sitemap Generator Plugin
     # https://github.com/jekyll/jekyll-sitemap
     # Plugin to silently generate a sitemaps.org compliant sitemap for your site
