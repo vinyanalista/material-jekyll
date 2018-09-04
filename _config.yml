@@ -254,8 +254,8 @@ lang: en
 
 # AddThis profile ID
 # AddThis is a content sharing platform. It can be used to better integrate the
-# website with social networks. An AddThis profile contains configuration options
-# and analytics data for a website.
+# website with social networks. An AddThis profile contains configuration
+# options and analytics data for a website.
 # Default: not set (AddThis is not used to handle social networks integration)
 # addthis_profile_id: "ra-example123456789"
 
