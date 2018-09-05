@@ -80,6 +80,13 @@ exclude:
 # to create custom renderers, please refer to
 # http://jekyllrb.com/docs/configuration/#markdown-options
 
+# Default line numbering on syntax highlighting
+# https://github.com/jekyll/jekyll/issues/4619
+kramdown:
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
+
 # Permalink
 # Set the site’s URLs style
 # Default: date
