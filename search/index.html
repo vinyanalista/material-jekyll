@@ -3,8 +3,8 @@ layout: default
 sitemap: false
 ---
 
-<div class="blog-post panel panel-default">
-    <header class="panel-heading">
+<div class="blog-post card mb-3">
+    <header class="card-header">
         <h1 class="blog-post-title" itemprop="headline name">
             {% if site.google.cse_id %}
                 Search results
@@ -14,11 +14,10 @@ sitemap: false
         </h1>
     </header>
 
-    <article class="blog-post-content panel-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-        [//]: # (Comments in Markdown: https://stackoverflow.com/a/20885980/1657502)
-        [//]: # (TODO Review all if's that check for (un)defined variables)
-        [//]: # (https://www.mattcrampton.com/blog/checking_if_a_variable_is_set_in_jekyll/)
-        [//]: # (https://github.com/Shopify/liquid/issues/223)
+    <article class="blog-post-content card-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
+        <!-- TODO Review all if's that check for (un)defined variables)
+        https://www.mattcrampton.com/blog/checking_if_a_variable_is_set_in_jekyll/
+        https://github.com/Shopify/liquid/issues/223 -->
         {% if site.google.cse_id == nil or site.google.cse_id == empty %}
             {% if site.google.adsense.content_ad_unit_1 and site.google.adsense.content_ad_unit_1 != "" and site.google.adsense.content_ad_unit_1 != nil %}
                 {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}

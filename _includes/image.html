@@ -1,4 +1,4 @@
-<div class='image no-ads-here text-center' itemscope itemtype='http://schema.org/ImageObject'>
+<div class='image no-ads-here text-center mb-3' itemscope itemtype='http://schema.org/ImageObject'>
 <a href='{% if include.link %}{{ include.link }}{% else %}{{ include.src }}{% endif %}' title='{{ include.caption }}'>
 <img src='{{ include.src }}' alt='{{ include.caption }}' class='img-fluid img-thumbnail' itemprop='contentUrl'{% if include.style %} style="{{ include.style }}"{% endif %}>
 </a>
