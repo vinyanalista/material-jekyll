@@ -66,28 +66,24 @@ layout: default
             <!-- Disqus -->
             <div class="gap"></div>
             <h2>Comments</h2>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div id="disqus_thread"></div>
-                    <script>
-                        var disqus_config = function () {
-                            this.page.url = '{{ page.url | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}';
-                        };
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = '{{ page.url | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}';
+                };
 
-                        (function() {
-                            var d = document, s = d.createElement('script');
+                (function() {
+                    var d = document, s = d.createElement('script');
 
-                            s.src = '//{{ site.disqus_shortname }}.disqus.com/embed.js';
+                    s.src = '//{{ site.disqus_shortname }}.disqus.com/embed.js';
 
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                        })();
-                    </script>
-                    <noscript>
-                        <p>Please <a href="http://www.enable-javascript.com/" target="_blank">enable JavaScript</a> to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.</p>
-                    </noscript>
-                </div><!-- .col-xs-12 -->
-            </div><!-- .row -->
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>
+                <p>Please <a href="http://www.enable-javascript.com/" target="_blank">enable JavaScript</a> to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.</p>
+            </noscript>
             <!-- Disqus End -->
         {% endif %}
     </article>

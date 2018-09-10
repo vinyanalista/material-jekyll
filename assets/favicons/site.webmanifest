@@ -2,8 +2,8 @@
 layout: null
 ---
 {
-    "name": "Material Jekyll",
-    "short_name": "Material Jekyll",
+    "name": "{{ site.title }}",
+    "short_name": "{{ site.title }}",
     "icons": [
         {
             "src": "{{ "/assets/favicons/android-chrome-192x192.png?v=3" | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}",
