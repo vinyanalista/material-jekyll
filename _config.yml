@@ -329,6 +329,11 @@ github_username: "jekyll"
 # Default: not set (Google Plus URL is not displayed)
 # google_plus_user_id: 123456789098765432123
 
+# Instagram username
+# Example: username, if your Instagram URL is https://instagram.com/username
+# Default: not set (Instagram URL is not displayed)
+# instagram_username: "username"
+
 # LinkedIn username
 # Example: username, if your LinkedIn public profile URL is
 # https://www.linkedin.com/in/username

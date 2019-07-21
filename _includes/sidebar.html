@@ -49,6 +49,9 @@
                 {% if site.twitter_username %}
                     <a href="https://twitter.com/{{ site.twitter_username }}" class="addthis_button_twitter_follow" addthis:userid="{{ site.twitter_username }}" itemprop="sameAs"></a>
                 {% endif %}
+                {% if site.instagram_username %}
+                    <a href="https://instagram.com/{{ site.instagram_username }}" class="addthis_button_instagram_follow" addthis:userid="{{ site.instagram_username }}" itemprop="sameAs"></a>
+                {% endif %}
                 {% if site.linkedin_username %}
                     <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" class="addthis_button_linkedin_follow" addthis:userid="{{ site.linkedin_username }}" itemprop="sameAs"></a>
                 {% endif %}
@@ -80,6 +83,13 @@
                     <li>
                         <a href="https://twitter.com/{{ site.twitter_username }}" itemprop="sameAs">
                             <i class="fab fa-twitter"></i> {{ site.twitter_username }}
+                        </a>
+                    </li>
+                {% endif %}
+                {% if site.instagram_username %}
+                    <li>
+                        <a href="https://instagram.com/{{ site.instagram_username }}" itemprop="sameAs">
+                            <i class="fab fa-instagram"></i> {{ site.instagram_username }}
                         </a>
                     </li>
                 {% endif %}
