@@ -339,13 +339,31 @@ blockquote.pull-right .small:after {
   border-color: rgba(0, 0, 0, 0.15);
 }
 
-/* Floating Action Button
-Borrowed from:
-https://pro.propeller.in/components/floating-button.php
-*/
+/* Floating Action Button */
+
+/* Borrowed from: https://pro.propeller.in/components/floating-button.php */
+
 #fab {
     bottom: 1rem;
     position: fixed;
     right: 1rem;
     z-index: 1000;
+}
+
+/* Also borrowed from: FezVrasta/bootstrap-material-design v4.1.2
+As the FAB is a PRO component in MDBootstrap */
+
+.btn.bmd-btn-fab {
+    /* bootstrap-material-design.css, line 9366 */
+    overflow: hidden;
+    font-size: 1.5rem;
+    /* 9374 */
+    padding: 0;
+    border-radius: 50%;
+    line-height: 0;
+    /* 9385 */
+    width: 3.5rem;
+    min-width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.26);
 }
