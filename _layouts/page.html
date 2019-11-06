@@ -12,7 +12,7 @@ layout: default
     </header>
 
     <article class="blog-post-content card-body" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-        {% if site.google.adsense.content_ad_unit_1 %}
+        {% if site.google.adsense.content_ad_unit_1 and jekyll.environment == "production" %}
             {% include adsense.html id="content_ad_unit_1" ad_slot=site.google.adsense.content_ad_unit_1 %}
         {% endif %}
 

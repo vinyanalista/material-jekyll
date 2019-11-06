@@ -90,7 +90,7 @@
     {% endif %}
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 
-    {% if site.google.analytics_property_id %}
+    {% if site.google.analytics_property_id and jekyll.environment == "production" %}
         <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.analytics_property_id }}"></script>
         <script>
@@ -103,12 +103,12 @@
         <!-- End Google Analytics -->
     {% endif %}
 
-    {% if site.google.adsense.publisher_id %}
+    {% if site.google.adsense.publisher_id and jekyll.environment == "production" %}
         <!-- Google AdSense -->
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {% endif %}
 
-    {% if site.addthis_profile_id %}
+    {% if site.addthis_profile_id and jekyll.environment == "production" %}
         <!-- AddThis -->
         <script async src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ site.addthis_profile_id }}"></script>
         <script type="text/javascript">

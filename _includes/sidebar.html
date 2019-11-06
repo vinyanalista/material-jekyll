@@ -138,7 +138,7 @@
     </div><!-- .card-body -->
 </div><!-- .card -->
 
-{% if site.google.adsense.sidebar_ad_unit %}
+{% if site.google.adsense.sidebar_ad_unit and jekyll.environment == "production" %}
     <div class="card mb-3">
         <div class="card-body">
             {% include adsense.html id="sidebar_ad_unit" ad_slot=site.google.adsense.sidebar_ad_unit %}

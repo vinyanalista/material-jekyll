@@ -24,13 +24,13 @@
     <meta itemprop="inLanguage" content="{{ site.lang }}"/>
 {% endif %}
 
-{% if site.disqus_shortname %}
+{% if site.disqus_shortname and jekyll.environment == "production" %}
     <!-- Disqus -->
     <script id="dsq-count-scr" src="//{{ site.disqus_shortname }}.disqus.com/count.js" async></script>
     <!-- Disqus End -->
 {% endif %}
 
-{% if site.google.adsense.publisher_id %}
+{% if site.google.adsense.publisher_id and jekyll.environment == "production" %}
     <!-- Google AdSense -->
     {% if site.google.adsense.content_ad_unit_2 %}
         {% include adsense.html id="content_ad_unit_2" ad_slot=site.google.adsense.content_ad_unit_2 %}
