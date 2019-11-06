@@ -338,3 +338,14 @@ blockquote.pull-right .small:after {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
 }
+
+/* Floating Action Button
+Borrowed from:
+https://pro.propeller.in/components/floating-button.php
+*/
+#fab {
+    bottom: 1rem;
+    position: fixed;
+    right: 1rem;
+    z-index: 1000;
+}

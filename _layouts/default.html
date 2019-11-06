@@ -24,5 +24,13 @@
 
     {% include footer.html %}
 
+    {% if jekyll.environment != "production" %}
+        <div id="fab">
+            <button type="button" class="btn btn-primary bmd-btn-fab">
+                <i class="material-icons">visibility</i>
+            </button>
+        </div>
+    {% endif %}
+
 </body>
 </html>
