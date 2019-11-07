@@ -63,28 +63,34 @@
     <meta name="theme-color" content="#009688">
 
     <!-- CSS -->
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <!--<link rel="stylesheet" href="{{ "/libs/bootstrap/4.3.1/css/bootstrap.min.css" | prepend: site.baseurl }}">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.2/dist/css/bootstrap-material-design.min.css" integrity="sha384-dI6l3oYG+wVvjfdlixt6+FMddrb9+uejLU/wMhQFKklk7RDtSDBfe/XuF1dkcgVV" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="{{ "/libs/bootstrap-material-design/4.1.2/css/bootstrap-material-design.min.css" | prepend: site.baseurl }}">-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="{{ "/libs/font-awesome/5.8.2/css/all.min.css" | prepend: site.baseurl }}">-->
+    {% if jekyll.environment == "production" %}
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.2/dist/css/bootstrap-material-design.min.css" integrity="sha384-dI6l3oYG+wVvjfdlixt6+FMddrb9+uejLU/wMhQFKklk7RDtSDBfe/XuF1dkcgVV" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    {% else %}
+        <!--<link rel="stylesheet" href="{{ "/libs/bootstrap/4.3.1/css/bootstrap.min.css" | prepend: site.baseurl }}">-->
+        <link rel="stylesheet" href="{{ "/libs/bootstrap-material-design/4.1.2/css/bootstrap-material-design.min.css" | prepend: site.baseurl }}">
+        <link rel="stylesheet" href="{{ "/libs/font-awesome/5.11.2/css/all.min.css" | prepend: site.baseurl }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ "/assets/css/syntax.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-    <!--<script src="{{ "/libs/jquery/3.4.1/jquery.slim.min.js" | prepend: site.baseurl }}"></script>-->
-    <script src="https://unpkg.com/popper.js@1.15.0/dist/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
-    <!--<script src="{{ "/libs/popper.js/1.15.0/umd/popper.min.js" | prepend: site.baseurl }}"></script>-->
-    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
-    <!--<script src="{{ "/libs/bootstrap/4.3.1/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>-->
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.2/dist/js/bootstrap-material-design.min.js" integrity="sha384-aWO+CcMRDQLEvnT8RdnCxWbs4C76Ryoo4pzYpGNW2vlHTHiPA7gpBzIB5nYwYfLg" crossorigin="anonymous"></script>
-    <!--<script src="{{ "/libs/bootstrap-material-design/4.1.2/js/bootstrap-material-design.min.js" | prepend: site.baseurl }}"></script>-->
+    {% if jekyll.environment == "production" %}
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha256-x3YZWtRjM8bJqf48dFAv/qmgL68SI4jqNWeSLMZaMGA=" crossorigin="anonymous"></script>
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.2/dist/js/bootstrap-material-design.min.js" integrity="sha384-aWO+CcMRDQLEvnT8RdnCxWbs4C76Ryoo4pzYpGNW2vlHTHiPA7gpBzIB5nYwYfLg" crossorigin="anonymous"></script>
+    {% else %}
+        <script src="{{ "/libs/jquery/3.4.1/jquery.slim.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/libs/popper.js/1.16.0/umd/popper.min.js" | prepend: site.baseurl }}"></script>
+        <!--<script src="{{ "/libs/bootstrap/4.3.1/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>-->
+        <script src="{{ "/libs/bootstrap-material-design/4.1.2/js/bootstrap-material-design.min.js" | prepend: site.baseurl }}"></script>
+    {% endif %}
     <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 
-    {% if site.google.analytics_property_id %}
+    {% if site.google.analytics_property_id and jekyll.environment == "production" %}
         <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.analytics_property_id }}"></script>
         <script>
@@ -97,12 +103,12 @@
         <!-- End Google Analytics -->
     {% endif %}
 
-    {% if site.google.adsense.publisher_id %}
+    {% if site.google.adsense.publisher_id and jekyll.environment == "production" %}
         <!-- Google AdSense -->
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {% endif %}
 
-    {% if site.addthis_profile_id %}
+    {% if site.addthis_profile_id and jekyll.environment == "production" %}
         <!-- AddThis -->
         <script async src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ site.addthis_profile_id }}"></script>
         <script type="text/javascript">
