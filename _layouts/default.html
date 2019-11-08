@@ -8,29 +8,32 @@
 {% include head.html %}
 
 <body itemscope itemtype="http://schema.org/{% if page.is_post %}{{ "BlogPosting" }}{% else %}{{ "WebPage" }}{% endif %}">
+    <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
+        {% include header.html %}
+        {% include drawer.html %}
 
-    {% include header.html %}
-
-    <div class="container">
-        <div class="row">
-            <div class='col-sm-8'>
-                {{ content }}
+        <main class="bmd-layout-content">
+            <div class="container" id="main-container">
+                <div class="row">
+                    <div class='col-sm-8'>
+                        {{ content }}
+                    </div>
+                    <div class="col-sm-4">
+                        {% include sidebar.html %}
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-4">
-                {% include sidebar.html %}
-            </div>
-        </div>
-    </div>
 
-    {% include footer.html %}
+            {% include footer.html %}
 
-    {% if jekyll.environment != "production" %}
-        <div id="fab">
-            <button type="button" class="btn btn-primary bmd-btn-fab">
-                <i class="material-icons">visibility</i>
-            </button>
-        </div>
-    {% endif %}
-
+            {% if jekyll.environment != "production" %}
+                <div id="fab">
+                    <button type="button" class="btn btn-primary bmd-btn-fab">
+                        <i class="material-icons">visibility</i>
+                    </button>
+                </div>
+            {% endif %}
+        </main>
+    </div><!-- .bmd-layout-container -->
 </body>
 </html>

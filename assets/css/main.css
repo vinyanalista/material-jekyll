@@ -5,7 +5,11 @@ html {
 
 body {
     background-color: #E5E5E5;
-    padding-top: 70px;
+}
+
+#main-container {
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
 
 @media (min-width: 992px) {
@@ -34,6 +38,16 @@ body {
 
 /* Header */
 
+.navbar {
+    z-index: 2;
+}
+
+@media (min-width: 576px) {
+    .navbar-toggler {
+        margin-left: 1rem;
+    }
+}
+
 @media (min-width: 320px) {
     a.navbar-brand {
         background: url(../favicons/favicon-32x32.png) 0px no-repeat;
@@ -42,31 +56,50 @@ body {
 }
 
 @media (max-width: 767px) {
+    .navbar > .container {
+        justify-content: flex-start;
+    }
+
+    .navbar .navbar-brand {
+        margin-left: 1rem;
+        margin-right: 0;
+    }
+
     .navbar-nav .nav-link {
         padding-right: 0;
         padding-left: 0;
     }
-
-    #search-form .bmd-form-group, #search-form .input-group {
-        width: 100%;
-    }
 }
 
-#search-field {
+#navbar-search-field {
     background-image: linear-gradient(0deg,#009688 2px,rgba(0,150,136,0) 0),linear-gradient(0deg,hsla(0,0%,100%,.5) 1px,transparent 0);
 }
 
-#search-form .is-focused .form-control {
+#navbar-search-form .is-focused .form-control {
     background-image: linear-gradient(0deg,hsla(0,0%,100%,.75) 2px,rgba(63,81,181,0) 0),linear-gradient(0deg,hsla(0,0%,100%,.5) 1px,transparent 0);
 }
 
-#search-button {
+#navbar-search-button {
     color: hsla(0,0%,100%,.5);
     padding: .5rem;
 }
 
-#search-field, #search-button:focus, #search-button:hover {
+#navbar-search-field, #navbar-search-button:focus, #navbar-search-button:hover {
     color: hsla(0,0%,100%,.75);
+}
+
+/* Navigation drawer */
+
+.bmd-layout-drawer {
+    position: fixed;
+}
+
+.bmd-drawer-f-l > .bmd-layout-drawer {
+    width: 250px;
+}
+
+#drawer-search-form {
+    padding: 1.125rem 1.125rem 0 1.125rem;
 }
 
 /* Pagination */
@@ -125,7 +158,7 @@ body {
 }
 
 @media (max-width: 469px) {
-    body {
+    #main-container {
         /* Margin bottom by footer height */
         margin-bottom: 150px;
     }
@@ -137,7 +170,7 @@ body {
 }
 
 @media (min-width: 470px) and (max-width: 767px) {
-    body {
+    #main-container {
         margin-bottom: 130px;
     }
 
@@ -147,7 +180,7 @@ body {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    body {
+    #main-container {
         margin-bottom: 110px;
     }
 
@@ -157,7 +190,7 @@ body {
 }
 
 @media (min-width: 992px) {
-    body {
+    #main-container {
         margin-bottom: 60px;
     }
 

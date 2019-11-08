@@ -1,0 +1,39 @@
+<!-- Navigation drawer -->
+<div id="drawer" class="bmd-layout-drawer bg-faded">
+    <header>
+        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </header>
+    <form action="{% if site.google.cse_id %}{{ "/search/" | prepend: site.baseurl }}{% else %}https://www.google.com/search{% endif %}" class="form-inline border-top" id="drawer-search-form" method="get" role="search">
+        {% if site.google.cse_id %}
+        {% else %}
+            <input type="hidden" name="as_sitesearch" value="{{ site.baseurl | prepend: site.url }}" />
+        {% endif %}
+        <div class="bmd-form-group-sm">
+            <div class="input-group">
+                <input class="form-control search-field" id="drawer-search-field" name="q" placeholder="Search" type="text" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary btn-number search-button" id="drawer-search-button" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div><!-- .input-group -->
+        </div><!-- .bmd-form-group-sm -->
+    </form>
+    <ul class="list-group list-group-flush border-top" id="drawer-links">
+        {% if site.navigation %}
+            {% for link in site.navigation %}
+                <li class="list-group-item">
+                    <a href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+        {% else %}
+            {% for page in site.pages %}
+                {% if page.title %}
+                    <li class="list-group-item">
+                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
