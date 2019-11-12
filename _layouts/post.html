@@ -62,7 +62,7 @@ layout: default
             <!-- AddThis Sharing Buttons End -->
         {% endif %}
 
-        {% if site.disqus_shortname %}
+        {% if site.disqus_shortname and jekyll.environment == "production" %}
             <!-- Disqus -->
             <div class="gap"></div>
             <h2>Comments</h2>
