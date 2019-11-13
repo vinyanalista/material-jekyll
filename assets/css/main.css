@@ -92,6 +92,7 @@ body {
 
 .bmd-layout-drawer {
     position: fixed;
+    z-index: 1000201; /* WTF AddThis? */
 }
 
 .bmd-drawer-f-l > .bmd-layout-drawer {
