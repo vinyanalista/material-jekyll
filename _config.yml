@@ -323,11 +323,10 @@ facebook:
 # Default: not set (GitHub URL is not displayed)
 github_username: "jekyll"
 
-# Google Plus user ID
-# Example: 123456789098765432123, if your Google Plus URL is
-# https://plus.google.com/123456789098765432123
-# Default: not set (Google Plus URL is not displayed)
-# google_plus_user_id: 123456789098765432123
+# GitLab username
+# Example: username, if your GitLab URL is https://gitlab.com/username
+# Default: not set (GitLab URL is not displayed)
+# gitlab_username: "username"
 
 # Instagram username
 # Example: username, if your Instagram URL is https://instagram.com/username
@@ -339,6 +338,11 @@ github_username: "jekyll"
 # https://www.linkedin.com/in/username
 # Default: not set (LinkedIn public profile URL is not displayed)
 # linkedin_username: "username"
+
+# Telegram username
+# Example: username, if your Telegram link is https://t.me/username
+# Default: not set (Telegram link is not displayed)
+# telegram_username: "username"
 
 # Twitter username
 # Example: jekyllrb, if your Twitter URL is https://twitter.com/jekyllrb

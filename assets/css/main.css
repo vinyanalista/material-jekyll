@@ -274,10 +274,6 @@ em.caption {
     float: none !important;
 }
 
-.at4-icon.aticon-github {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAnBJREFUWIW11s+LjWEUB/DPXMYMhuEfIMaQUkiykliKRBELNn4slZSSko383CPMUpZKsmKrlGYG2VAjmzGT/MigO35ci+e93ds7z/ve97qvbz2b55znfM9znnOec7oUxwLswDasxXIsTGRfMIZRPMIDfG3Ddi5WYgjfUSu4vuEWVnRCPBdX8bMN4vSaxmX0tks+iJcdEKfXKAaKkq/HZInk9TUh5E7Lm/8P8mYnMiMxz8ywj+DuPzr1HneE8KefI5oTVyNGdieybhzGeLL/Ec+EknuMYXxOZO9wCLOTs/sidi+lyVeKZ3u6jPqF+s/CCuG/aMbqiN1pqacYiijV0kr/iFUZtm/WFRbK/mR2leDAngzbU+iDAxkKY0LIO0U/3mZw7COEIiY8UAJ5HQczOK7D04jgB3pKdGAuqhGeJ/AhInheInkdryI8ExWNltqM6n9wYDqyt6iCroigjORLY3Fkr4v4E1SVmwPz8SvCM1kRSiSNOdhSogNbMSuyP1YR/vEYjpfoQJatYbI/oprQVDrFkRz7e8n/in/hpHj4WmE2TuF3hu0pTY3rdpPgHPbjRdPea5zGBvnJ2YuNOIM3OTev4UbzwUGhTmv4hO2Jdy8iB+9lkHfhYQvS5iqb0davpMKzVJjhvqQOb8qJwOaCDlyMHe5N3fhasr8M54XGcUxj0omhrwD5qJxnHBAGx5owIe3MIYuhuwX5eHKhXKzTGEL/4D5O4CjOtjg7pwX5mqI3GRA6YsxQrHfU0ZtxZkSBm8eMXdaojvrKy4F5Kd0qLuiwrwwINTslDCp5n1JPQjolJG3eBN02+rCkgN7SRLcQ/gKnLYoRyhei4QAAAABJRU5ErkJggg==');
-}
-
 /* Code highlighting */
 
 /* https://demisx.github.io/jekyll/2014/01/13/improve-code-highlighting-in-jekyll.html */
