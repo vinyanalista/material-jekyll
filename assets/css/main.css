@@ -379,3 +379,59 @@ https://pro.propeller.in/components/floating-button.php
     right: 1rem;
     z-index: 1000;
 }
+
+/* Follow Buttons */
+
+div.follow-buttons a {
+    color: #fff !important;
+}
+
+div.follow-buttons .btn-facebook {
+    background-color: #3949AB; /* Indigo 600 */
+}
+
+div.follow-buttons .btn-twitter {
+    background-color: #2196f3; /* Blue 500 */
+}
+
+div.follow-buttons .btn-instagram {
+    background-color: #e91e63; /* Pink 500 */
+}
+
+div.follow-buttons .btn-linkedin {
+    background-color: #1565c0; /* Blue 800 */
+}
+
+div.follow-buttons .btn-youtube {
+    background-color: #d50000; /* Red A700 */
+}
+
+div.follow-buttons .btn-telegram {
+    background-color: #0288d1; /* Light Blue 700 */
+}
+
+div.follow-buttons .btn-foursquare {
+    background-color: #ff4081; /* Pink A200 */
+}
+
+div.follow-buttons .btn-github {
+    background-color: #212121; /* Gray 900 */
+}
+
+div.follow-buttons .btn-gitlab {
+    background-color: #e64a19; /* Deep Orange 700 */
+}
+
+div.follow-buttons .btn-rss {
+    background-color: #f57c00; /* Orange 700 */
+}
+
+/* Linktree */
+
+#linktree-logo {
+    max-width: 96px
+}
+
+#linktree-brand {
+    font-weight: 400;
+}
