@@ -1,11 +1,11 @@
-<div class="card mb-3">
+<div class="card mb-3" id="about">
     <div class="card-header">
         <h3><a name="about"></a>About</h3>
     </div>
     <div class="card-body" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <p class='text-center' itemprop='logo' itemscope itemtype='http://schema.org/ImageObject'>
             <a href='{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}' itemprop='url'>
-                <img src='{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}' class='img-fluid img-thumbnail'>
+                <img src='{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}' class='img-fluid img-thumbnail rounded-circle'>
             </a>
             <!--<meta itemprop="width" content=""/>--><!-- TODO Image width -->
             <!--<meta itemprop="height" content=""/>--><!-- TODO Image height -->
@@ -21,7 +21,7 @@
     </div><!-- .card-body -->
 </div><!-- .card -->
 
-<div class="card mb-3">
+<div class="card mb-3" id="author">
     <div class="card-header">
         <h3><a name="author"></a>Author</h3>
     </div>
@@ -49,6 +49,9 @@
 
 {% if site.google.adsense.sidebar_ad_unit and jekyll.environment == "production" %}
     <div class="card mb-3">
+        <div class="card-header">
+            <h3>Ad</h3>
+        </div>
         <div class="card-body">
             {% include adsense.html id="sidebar_ad_unit" ad_slot=site.google.adsense.sidebar_ad_unit %}
         </div><!-- .col-xs-12 -->
