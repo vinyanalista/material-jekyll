@@ -1,0 +1,51 @@
+---
+---
+<!DOCTYPE html>
+<html{% if site.lang %} lang="{{ site.lang }}" {% endif %}{% if site.addthis_profile_id %} prefix="addthis: http://www.addthis.com/help/api-spec" {% endif %}>
+{% include head.html %}
+<body>
+    <div class="container mt-3 mb-3">
+        <p class="mb-1 text-center">
+            <a href="{{ site.baseurl | prepend: site.url }}">
+                <img src="{{ site.image | prepend: site.baseurl | replace: "//", "/" | prepend: site.url }}" id="linktree-logo" class="img-fluid img-thumbnail rounded-circle">
+            </a>
+        </p>
+        <p class="lead text-center">
+            <a href="{{ site.baseurl | prepend: site.url }}" id="linktree-brand">
+                <span itemprop="name">{{ site.title }}</span>
+            </a>
+        </p>
+
+        <h5>Latest article:</h5>
+        {% for post in site.posts limit:1 %}
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-4">
+                        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                            <img src="{{ post.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" class="card-img">
+                        </a>
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h6 class="card-text">
+                                <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                                    {{ post.title }}
+                                </a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <a href="{{ site.baseurl | prepend: site.url }}" class="btn btn-block btn-lg btn-outline-primary active mb-3">
+            Go to website
+        </a>
+
+        {% if site.addthis_profile_id %}
+            {% include follow-buttons-addthis.html %}
+        {% else %}
+            {% include follow-buttons.html %}
+        {% endif %}
+    </div>
+</body>

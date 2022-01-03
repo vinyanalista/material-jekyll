@@ -22,15 +22,15 @@
     <ul class="list-group list-group-flush border-top" id="drawer-links">
         {% if site.navigation %}
             {% for link in site.navigation %}
-                <li class="list-group-item">
-                    <a href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
                 </li>
             {% endfor %}
         {% else %}
             {% for page in site.pages %}
                 {% if page.title %}
-                    <li class="list-group-item">
-                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                     </li>
                 {% endif %}
             {% endfor %}
