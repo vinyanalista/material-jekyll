@@ -7,6 +7,20 @@ body {
     background-color: #E5E5E5;
 }
 
+table:not(.rouge-table) {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table:not(.rouge-table) td,
+table:not(.rouge-table) th {
+    border: 1px lightgray solid;
+    padding: 0.25rem;
+}
+
 #main-container {
     margin-top: 70px;
     margin-bottom: 70px;
