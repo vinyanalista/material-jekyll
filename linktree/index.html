@@ -20,12 +20,12 @@
         {% for post in site.posts limit:1 %}
             <div class="card mb-3">
                 <div class="row no-gutters">
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
                             <img src="{{ post.image | prepend: site.baseurl | replace: '//', '/' | prepend: site.url }}" class="card-img">
                         </a>
                     </div>
-                    <div class="col-8">
+                    <div class="col-md-8">
                         <div class="card-body">
                             <h6 class="card-text">
                                 <a class="blog-post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
