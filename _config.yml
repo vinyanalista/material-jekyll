@@ -161,7 +161,7 @@ google:
 
 # Specifies how many items should be displayed per page
 # Default: not set (pagination disabled)
-# paginate: 10
+paginate: 10
 
 # You may also specify the destination of the pagination pages
 # Default: /page:num (for example, /page2, /page3, etc)
