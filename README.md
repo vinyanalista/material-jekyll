@@ -9,7 +9,7 @@ It is built on top of the [Jekyll's default site template](https://github.com/je
 
 - [jQuery](http://jquery.com/) (MIT License)
 - [Bootstrap](http://getbootstrap.com/) (MIT License)
-- [Material Design for Bootstrap](http://fezvrasta.github.io/bootstrap-material-design/) (MIT License)
+- [Material Design for Bootstrap](https://mdbootstrap.com/) (MIT License)
 - [Font Awesome](http://fontawesome.io) (SIL OFL 1.1 and MIT License)
 
 This template comes out of the box with features desirable for any modern website, including:
