@@ -1,3 +1,5 @@
+⚠️ **Archiving notice:** `material-jekyll` was merged with `material-jekyll-plus` and moved to GitLab. For the latest code, see [`antoniomedeiros/material-jekyll`](https://gitlab.com/antoniomedeiros/material-jekyll).
+
 Material site template for Jekyll
 =================================
 
